@@ -1,0 +1,6 @@
+{
+  "playwright": {
+    "command": "cmd.exe",
+    "args": ["/c", "npx", "-y", "@playwright/mcp@latest"]
+  }
+}
