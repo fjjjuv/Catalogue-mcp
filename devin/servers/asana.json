@@ -1,0 +1,9 @@
+{
+  "asana": {
+    "url": "https://mcp.asana.com/v2/mcp",
+    "transport": "http",
+    "oauthResource": "https://mcp.asana.com/v2",
+    "oauthClientId": "${env:ASANA_MCP_CLIENT_ID}",
+    "oauthClientSecret": "${env:ASANA_MCP_CLIENT_SECRET}"
+  }
+}

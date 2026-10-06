@@ -1,11 +1,8 @@
 # Cursor
 
-Copier `mcp.json` dans :
-- Projet : `.cursor/mcp.json`
-- Global : `~/.cursor/mcp.json`
+Fusionner les entrées de `servers/*.json` sous la clé `mcpServers` de :
+- `.cursor/mcp.json` (projet)
+- `~/.cursor/mcp.json` (global)
 
-Puis : Cursor Settings → Tools & MCP → activer "trello" → le flux OAuth
-s'ouvre dans le navigateur.
-
-Ou utiliser le deeplink d'installation :
-https://cursor.com/en/install-mcp?name=trello&config=eyJ1cmwiOiJodHRwczovL21jcC50cmVsbG8uY29tL3YxIn0%3D
+Puis : Settings → Tools & MCP → activer le serveur → flux OAuth dans le
+navigateur.

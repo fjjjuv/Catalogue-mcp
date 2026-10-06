@@ -1,51 +1,46 @@
-# MCP Trello — Configurations par plateforme
+# MCP Configs — configurations multi-plateformes
 
-Configurations prêtes à l'emploi pour connecter le **serveur MCP Trello officiel**
-(hébergé par Atlassian) aux principaux clients MCP.
+Collection de configurations prêtes à l'emploi pour connecter des
+**serveurs MCP** aux principaux clients : Devin, Cursor, Claude Desktop,
+VS Code, Codex, Claude Code.
 
-## À propos du serveur
+## Organisation
 
-| | |
-|---|---|
-| Endpoint | `https://mcp.trello.com/v1` |
-| Repo officiel | https://github.com/atlassian/trello-mcp-server |
-| Authentification | OAuth 2.0, accès scopé par workspace |
-| Tarif | Gratuit, tous plans Trello |
-| Fonctionnalités | Boards, lists, cards, checklists, commentaires, labels, custom fields, inbox, planner, recherche |
+```
+<plateforme>/
+  README.md              # instructions spécifiques au client
+  servers/
+    <serveur>.json|toml  # bloc de config à copier
+```
 
-## Plateformes supportées
-
-| Plateforme | Dossier | Méthode |
+| Plateforme | Fichier de config | Format |
 |---|---|---|
-| Devin | [`devin/`](devin/) | `devin mcp add` + `devin mcp login --scopes` |
-| Cursor | [`cursor/`](cursor/) | `.cursor/mcp.json` |
-| Claude Desktop | [`claude-desktop/`](claude-desktop/) | `claude_desktop_config.json` |
-| VS Code | [`vscode/`](vscode/) | `.vscode/mcp.json` (clé `"servers"`) |
-| Codex | [`codex/`](codex/) | `codex mcp add` / `config.toml` |
-| Claude Code | [`claude-code/`](claude-code/) | `claude mcp add --transport http` |
+| [Devin](devin/) | `%APPDATA%\devin\mcp_config.json` ou `.devin/mcp_config.json` | `mcpServers` (JSON) |
+| [Cursor](cursor/) | `.cursor/mcp.json` | `mcpServers` (JSON) |
+| [Claude Desktop](claude-desktop/) | `claude_desktop_config.json` | `mcpServers` (JSON) |
+| [VS Code](vscode/) | `.vscode/mcp.json` | `servers` + `type` (JSON) |
+| [Codex](codex/) | `~/.codex/config.toml` | `mcp_servers.*` (TOML) |
+| [Claude Code](claude-code/) | via `claude mcp add` | CLI |
 
-## Scopes OAuth Trello
+## Serveurs disponibles
 
-Certains clients (ex. Devin) exigent des scopes explicites — sans eux,
-Atlassian renvoie *"This application has not requested any supported
-Atlassian permissions"*. Liste complète supportée par le serveur :
+| Serveur | Endpoint | Auth | Notes |
+|---|---|---|---|
+| **Trello** (officiel Atlassian) | `https://mcp.trello.com/v1` | OAuth 2.0 | Scopes explicites requis par certains clients (voir [devin/README.md](devin/README.md)) |
+| **Asana** | `https://mcp.asana.com/v2/mcp` | OAuth 2.0 | Client ID/secret pré-enregistré requis dans Devin |
 
-```
-offline_access read:me read:account
-read:board:trello write:board:trello
-read:organization:trello write:organization:trello
-read:member:trello
-read:member.inbox:trello write:member.inbox:trello
-read:member.planner:trello write:member.planner:trello
-```
+## Utilisation
 
-## Comment ça marche
+1. Choisir le dossier de votre plateforme
+2. Copier le fichier `servers/<serveur>.json` dans la config du client
+   (fusionner sous la clé `mcpServers` / `servers` selon le format)
+3. Lancer la connexion → flux OAuth dans le navigateur
+4. Les outils `<serveur>*` deviennent disponibles
 
-1. Copier la config du dossier correspondant à votre client
-2. Lancer la connexion → le navigateur s'ouvre sur l'écran de
-   consentement Atlassian/Trello
-3. Choisir le workspace à autoriser, valider les permissions
-4. Vos outils `trello*` sont disponibles dans le client
+## Secrets
+
+Ne jamais commiter de secrets. Utiliser `${env:VAR}` quand le client le
+supporte (Devin), ou une variable d'environnement.
 
 ## Licence
 
