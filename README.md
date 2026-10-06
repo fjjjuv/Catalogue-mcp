@@ -22,11 +22,11 @@ par plateforme, nommé d'après la plateforme.
 
 ## Serveurs
 
-| Dossier | Serveur | Endpoint / Commande | Auth |
+| Dossier | Serveur | Type | Auth |
 |---|---|---|---|
-| [`trello/`](trello/) | Trello (officiel Atlassian) | `https://mcp.trello.com/v1` | OAuth 2.0 |
-| [`asana/`](asana/) | Asana | `https://mcp.asana.com/v2/mcp` | OAuth 2.0 |
-| [`playwright/`](playwright/) | Playwright (Microsoft) | `npx -y @playwright/mcp@latest` (stdio) | Aucune |
+| [`trello/`](trello/) | Trello (officiel Atlassian) | remote `https://mcp.trello.com/v1` | OAuth 2.0 |
+| [`asana/`](asana/) | Asana | remote `https://mcp.asana.com/v2/mcp` | OAuth 2.0 |
+| [`playwright/`](playwright/) | Playwright | local stdio (`npx @playwright/mcp`) | aucune |
 
 ## Formats par plateforme
 
