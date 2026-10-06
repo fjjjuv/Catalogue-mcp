@@ -9,8 +9,7 @@ VS Code, Codex, Claude Code.
 ```
 <plateforme>/
   README.md              # instructions spécifiques au client
-  servers/
-    <serveur>.json|toml  # bloc de config à copier
+  <serveur>.json|toml    # bloc de config à copier
 ```
 
 | Plateforme | Fichier de config | Format |
@@ -32,7 +31,7 @@ VS Code, Codex, Claude Code.
 ## Utilisation
 
 1. Choisir le dossier de votre plateforme
-2. Copier le fichier `servers/<serveur>.json` dans la config du client
+2. Copier le fichier `<serveur>.json` dans la config du client
    (fusionner sous la clé `mcpServers` / `servers` selon le format)
 3. Lancer la connexion → flux OAuth dans le navigateur
 4. Les outils `<serveur>*` deviennent disponibles

@@ -1,6 +1,6 @@
 # VS Code
 
-Fusionner les entrées de `servers/*.json` sous la clé `"servers"` de
+Fusionner les entrées de `*.json` sous la clé `"servers"` de
 `.vscode/mcp.json` (workspace) ou du profil utilisateur
 (`MCP: Open User Configuration`).
 

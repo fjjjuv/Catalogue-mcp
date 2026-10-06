@@ -1,6 +1,6 @@
 # Devin
 
-Copier le contenu de `servers/<nom>.json` sous la clé `mcpServers` de :
+Copier le contenu de `<nom>.json` sous la clé `mcpServers` de :
 - `%APPDATA%\devin\mcp_config.json` (Windows, global)
 - `.devin/mcp_config.json` (projet)
 

@@ -10,5 +10,5 @@ codex mcp login <nom>
 
 ## Via config
 
-Fusionner les blocs de `servers/*.toml` dans `~/.codex/config.toml`,
+Fusionner les blocs de `*.toml` dans `~/.codex/config.toml`,
 puis `codex mcp login <nom>` pour le flux OAuth.

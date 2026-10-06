@@ -1,6 +1,6 @@
 # Cursor
 
-Fusionner les entrées de `servers/*.json` sous la clé `mcpServers` de :
+Fusionner les entrées de `*.json` sous la clé `mcpServers` de :
 - `.cursor/mcp.json` (projet)
 - `~/.cursor/mcp.json` (global)
 
