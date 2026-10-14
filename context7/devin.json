@@ -1,0 +1,11 @@
+{
+  "context7": {
+    "command": "cmd.exe",
+    "args": [
+      "/c",
+      "npx",
+      "-y",
+      "@upstash/context7-mcp@1.0.31"
+    ]
+  }
+}

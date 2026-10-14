@@ -1,0 +1,8 @@
+{
+  "semgrep": {
+    "command": "semgrep",
+    "args": [
+      "mcp"
+    ]
+  }
+}

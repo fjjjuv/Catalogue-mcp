@@ -1,0 +1,11 @@
+{
+  "computer-use": {
+    "command": "cmd.exe",
+    "args": [
+      "/c",
+      "npx",
+      "-y",
+      "computer-use-mcp"
+    ]
+  }
+}

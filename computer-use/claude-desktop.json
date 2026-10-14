@@ -1,0 +1,9 @@
+{
+  "computer-use": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "computer-use-mcp"
+    ]
+  }
+}

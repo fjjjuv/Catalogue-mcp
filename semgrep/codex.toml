@@ -1,0 +1,3 @@
+[mcp_servers.semgrep]
+command = "semgrep"
+args = ["mcp"]

@@ -1,0 +1,3 @@
+[mcp_servers.computer-use]
+command = "npx"
+args = ["-y", "computer-use-mcp"]

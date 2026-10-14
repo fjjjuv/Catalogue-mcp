@@ -26,7 +26,16 @@ par plateforme, nommé d'après la plateforme.
 |---|---|---|---|
 | [`trello/`](trello/) | Trello (officiel Atlassian) | remote `https://mcp.trello.com/v1` | OAuth 2.0 |
 | [`asana/`](asana/) | Asana | remote `https://mcp.asana.com/v2/mcp` | OAuth 2.0 |
+| [`github/`](github/) | GitHub MCP Server (officiel) | remote `https://api.githubcopilot.com/mcp` | OAuth / token |
+| [`exa-code/`](exa-code/) | Exa Code | remote `https://mcp.exa.ai/mcp` | compte Exa |
+| [`deepwiki/`](deepwiki/) | DeepWiki | remote `https://mcp.deepwiki.com/mcp` | aucune |
+| [`cloudflare-docs/`](cloudflare-docs/) | Cloudflare Docs | remote `https://docs.mcp.cloudflare.com/mcp` | aucune |
 | [`playwright/`](playwright/) | Playwright | local stdio (`npx @playwright/mcp`) | aucune |
+| [`puppeteer/`](puppeteer/) | Puppeteer | local stdio (`npx @modelcontextprotocol/server-puppeteer`) | aucune |
+| [`computer-use/`](computer-use/) | Computer Use | local stdio (`npx computer-use-mcp`) | aucune |
+| [`context7/`](context7/) | Context7 (Upstash) | local stdio (`npx @upstash/context7-mcp`) | aucune |
+| [`memory/`](memory/) | Memory (officiel MCP) | local stdio (`npx @modelcontextprotocol/server-memory`) | aucune |
+| [`semgrep/`](semgrep/) | Semgrep | local stdio (`semgrep mcp`) | aucune |
 
 ## Formats par plateforme
 
