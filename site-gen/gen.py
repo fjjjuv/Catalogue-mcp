@@ -2,7 +2,8 @@
 """Génère le site GitHub Pages pour mcp-configs (statique, SEO + GEO)."""
 import os, json, html
 
-OUT = r"C:\Users\juvanyju\OneDrive - Legrand France\Bureau\test\site-gen\out"
+HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(HERE, "out")
 os.makedirs(OUT, exist_ok=True)
 
 BASE = "https://fjjjuv.github.io/catalogue-mcp"

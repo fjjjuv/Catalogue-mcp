@@ -2,7 +2,8 @@
 """Site Catalogue-mcp v2 — style prompt-flamegraph + i18n FR/EN."""
 import os, json, html
 
-OUT = r"C:\Users\juvanyju\OneDrive - Legrand France\Bureau\test\site-gen\out"
+HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(HERE, "out")
 os.makedirs(OUT, exist_ok=True)
 
 BASE = "https://fjjjuv.github.io/Catalogue-mcp"
@@ -489,10 +490,10 @@ write("serveurs.html",srv)
 tr("cmp_h1","Comparison","Comparatif")
 tr("cmp_intro","Subjective ratings from real use: daily usefulness, tool richness, reliability. Install difficulty: <b>very easy</b> = copy-paste is enough · <b>easy</b> = one simple auth step · <b>medium</b> = a few prerequisites (API key, OAuth scopes) · <b>hard</b> = tricky setup · <b>very hard</b> = homemade tinkering required.","Notes subjectives fondées sur l'usage réel : utilité quotidienne, richesse des outils, fiabilité. Difficulté d'installation : <b>très facile</b> = copier-coller suffisant · <b>facile</b> = une étape d'auth simple · <b>moyen</b> = quelques prérequis (clé API, scopes OAuth) · <b>difficile</b> = setup délicat · <b>très difficile</b> = bidouillage maison requis.")
 tr("cmp_start","Where to start?","Par où commencer ?")
-tr("cmp_s1","<b>First MCP</b> — <a href='{b}/serveurs/context7.html'>Context7</a> or <a href='{b}/serveurs/deepwiki.html'>DeepWiki</a>: no auth, instant effect on answer quality","<b>Premier MCP</b> — <a href='{b}/serveurs/context7.html'>Context7</a> ou <a href='{b}/serveurs/deepwiki.html'>DeepWiki</a> : aucun auth, effet immédiat sur la qualité")
-tr("cmp_s2","<b>Productivity</b> — <a href='{b}/serveurs/github.html'>GitHub</a> then <a href='{b}/serveurs/trello.html'>Trello</a>: the agent acts on your daily tools","<b>Productivité</b> — <a href='{b}/serveurs/github.html'>GitHub</a> puis <a href='{b}/serveurs/trello.html'>Trello</a> : l'agent agit sur vos outils du quotidien")
-tr("cmp_s3","<b>Security</b> — <a href='{b}/serveurs/semgrep.html'>Semgrep</a>: continuous scanning while the agent codes","<b>Sécurité</b> — <a href='{b}/serveurs/semgrep.html'>Semgrep</a> : scan continu pendant que l'agent code")
-tr("cmp_s4","<b>Browser</b> — <a href='{b}/serveurs/playwright.html'>Playwright</a>: real web testing without writing scripts","<b>Navigateur</b> — <a href='{b}/serveurs/playwright.html'>Playwright</a> : tests web réels sans écrire de script")
+tr("cmp_s1",f"<b>First MCP</b> — <a href='{BASE}/serveurs/context7.html'>Context7</a> or <a href='{BASE}/serveurs/deepwiki.html'>DeepWiki</a>: no auth, instant effect on answer quality",f"<b>Premier MCP</b> — <a href='{BASE}/serveurs/context7.html'>Context7</a> ou <a href='{BASE}/serveurs/deepwiki.html'>DeepWiki</a> : aucun auth, effet immédiat sur la qualité")
+tr("cmp_s2",f"<b>Productivity</b> — <a href='{BASE}/serveurs/github.html'>GitHub</a> then <a href='{BASE}/serveurs/trello.html'>Trello</a>: the agent acts on your daily tools",f"<b>Productivité</b> — <a href='{BASE}/serveurs/github.html'>GitHub</a> puis <a href='{BASE}/serveurs/trello.html'>Trello</a> : l'agent agit sur vos outils du quotidien")
+tr("cmp_s3",f"<b>Security</b> — <a href='{BASE}/serveurs/semgrep.html'>Semgrep</a>: continuous scanning while the agent codes",f"<b>Sécurité</b> — <a href='{BASE}/serveurs/semgrep.html'>Semgrep</a> : scan continu pendant que l'agent code")
+tr("cmp_s4",f"<b>Browser</b> — <a href='{BASE}/serveurs/playwright.html'>Playwright</a>: real web testing without writing scripts",f"<b>Navigateur</b> — <a href='{BASE}/serveurs/playwright.html'>Playwright</a> : tests web réels sans écrire de script")
 crows="".join(f"""<tr><td><a href="{BASE}/serveurs/{s['slug']}.html">{s['name']}</a></td>
 <td><span style="color:#ffd700">{stars(s['score'])}</span> {s['score']}/5</td>
 <td>{difftag(s)}</td><td data-i18n="s_{s['slug'].replace('-','_')}_cout">{s['cout_en']}</td>
@@ -640,7 +641,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 write("app.js",app)
 
 # ============ CSS (reuse flamegraph style + extras) ========================
-css=open(r"C:\Users\juvanyju\OneDrive - Legrand France\Bureau\test\site-gen\ref-style.css",encoding="utf-8").read()
+css=open(os.path.join(HERE,"ref-style.css"),encoding="utf-8").read()
 extra="""
 /* Catalogue-mcp : palette propre (cyan → indigo) — distincte de prompt-flamegraph */
 :root{
@@ -682,7 +683,7 @@ write("style.css",css+extra)
 
 # ============ logo + robots + sitemap ======================================
 import shutil
-shutil.copy(r"C:\Users\juvanyju\OneDrive - Legrand France\Bureau\test\site-gen\logo.svg", os.path.join(OUT,"logo.svg"))
+shutil.copy(os.path.join(HERE,"logo.svg"), os.path.join(OUT,"logo.svg"))
 
 
 robots="User-agent: *\nAllow: /\n\n"
