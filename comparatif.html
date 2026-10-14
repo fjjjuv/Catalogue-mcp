@@ -103,7 +103,7 @@
 </ul></div>
 <footer class="site-footer"><div class="container footer-inner">
 <p class="footer-brand"><img src="https://fjjjuv.github.io/Catalogue-mcp/logo.svg" alt="" width="20" height="20" style="vertical-align:-4px"> <b>Catalogue-mcp</b></p>
-<p data-i18n="foot_by" data-i18n-html="1">© 2026 <a href="https://github.com/fjjjuv" rel="me author">fjjjuv</a> (Julien) — France 🇫🇷 · All content free &amp; open source</p>
+<p data-i18n="foot_by" data-i18n-html="1">© <span class="copyright-year"></span> <a href="https://github.com/fjjjuv" rel="me author">fjjjuv</a> (Julien) — France 🇫🇷 · All content free &amp; open source</p>
 <p class="footer-links">
 <a href="https://github.com/fjjjuv" rel="me">GitHub · fjjjuv</a> ·
 <a href="https://fjjjuv.github.io/Mon-porte-folio/#profil">Portfolio</a> ·
@@ -114,4 +114,5 @@
 <button class="back-to-top" id="backTop" aria-label="Top">↑</button>
 <script src="https://fjjjuv.github.io/Catalogue-mcp/i18n.js"></script>
 <script src="https://fjjjuv.github.io/Catalogue-mcp/app.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>{const y=new Date().getFullYear();const f=()=>document.querySelectorAll('.copyright-year').forEach(e=>e.textContent=y);f();new MutationObserver(f).observe(document.body,{childList:true,subtree:true});});</script>
 </body></html>
