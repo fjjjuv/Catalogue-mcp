@@ -1,36 +1,38 @@
-# Trello (serveur MCP officiel)
+# Trello (official MCP server)
 
-Serveur MCP officiel hébergé par Atlassian.
+**[🇫🇷 Français](README_FR.md)**
+
+Official MCP server hosted by Atlassian.
 
 | | |
 |---|---|
 | Endpoint | `https://mcp.trello.com/v1` |
 | Repo | https://github.com/atlassian/trello-mcp-server |
-| Auth | OAuth 2.0, accès scopé par workspace |
-| Tarif | Gratuit, tous plans Trello |
-| Fonctionnalités | Boards, lists, cards, checklists, commentaires, labels, custom fields, inbox, planner, recherche |
+| Auth | OAuth 2.0, workspace-scoped access |
+| Pricing | Free, all Trello plans |
+| Features | Boards, lists, cards, checklists, comments, labels, custom fields, inbox, planner, search |
 
-## Fichiers par plateforme
+## Files per platform
 
-| Fichier | Plateforme | Destination |
+| File | Platform | Destination |
 |---|---|---|
-| `devin.json` | Devin | `mcpServers` de `%APPDATA%\devin\mcp_config.json` ou `.devin/mcp_config.json` |
-| `cursor.json` | Cursor | `mcpServers` de `.cursor/mcp.json` ou `~/.cursor/mcp.json` |
-| `claude-desktop.json` | Claude Desktop | `mcpServers` de `claude_desktop_config.json` |
-| `vscode.json` | VS Code | `servers` de `.vscode/mcp.json` (clé `"servers"`, `"type": "http"`) |
+| `devin.json` | Devin | `mcpServers` in `%APPDATA%\devin\mcp_config.json` or `.devin/mcp_config.json` |
+| `cursor.json` | Cursor | `mcpServers` in `.cursor/mcp.json` or `~/.cursor/mcp.json` |
+| `claude-desktop.json` | Claude Desktop | `mcpServers` in `claude_desktop_config.json` |
+| `vscode.json` | VS Code | `servers` in `.vscode/mcp.json` (`"servers"` key, `"type": "http"`) |
 | `codex.toml` | Codex | `~/.codex/config.toml` |
 
-## Claude Code (CLI uniquement)
+## Claude Code (CLI only)
 
 ```bash
 claude mcp add --transport http trello https://mcp.trello.com/v1
-# puis /mcp → trello → Authenticate
+# then /mcp → trello → Authenticate
 ```
 
-## Devin — OAuth (scopes obligatoires)
+## Devin — OAuth (required scopes)
 
-Le login sans scopes échoue ("no supported Atlassian permissions").
-Utiliser :
+Login without scopes fails ("no supported Atlassian permissions").
+Use:
 
 ```bash
 devin mcp add trello https://mcp.trello.com/v1

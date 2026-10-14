@@ -1,21 +1,23 @@
 # DeepWiki
 
-Documentation IA des dépôts GitHub (structure wiki, Q&A sur un codebase).
+**[🇫🇷 Français](README_FR.md)**
+
+AI-generated documentation for GitHub repositories (wiki structure, Q&A on a codebase).
 
 | | |
 |---|---|
 | **Type** | remote |
-| **Auth** | aucune |
-| **Clé de config** | `deepwiki` |
+| **Auth** | none |
+| **Config key** | `deepwiki` |
 
-Outils : read_wiki_structure, read_wiki_contents, ask_wiki_question.
+Tools: read_wiki_structure, read_wiki_contents, ask_wiki_question.
 
-## Fichiers de config par plateforme
+## Config files per platform
 
-| Fichier | Plateforme | Emplacement |
+| File | Platform | Location |
 |---|---|---|
-| `devin.json` | Devin | fusionner dans `%APPDATA%\devin\mcp_config.json` sous `mcpServers` |
+| `devin.json` | Devin | merge into `%APPDATA%\devin\mcp_config.json` under `mcpServers` |
 | `cursor.json` | Cursor | `.cursor/mcp.json` |
 | `claude-desktop.json` | Claude Desktop | `claude_desktop_config.json` |
-| `vscode.json` | VS Code | `.vscode/mcp.json` (clé `servers`) |
+| `vscode.json` | VS Code | `.vscode/mcp.json` (`servers` key) |
 | `codex.toml` | Codex | `~/.codex/config.toml` |

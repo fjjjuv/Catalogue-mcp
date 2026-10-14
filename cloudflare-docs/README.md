@@ -1,21 +1,23 @@
 # Cloudflare Docs
 
-Recherche dans la documentation officielle Cloudflare.
+**[🇫🇷 Français](README_FR.md)**
+
+Search the official Cloudflare documentation.
 
 | | |
 |---|---|
 | **Type** | remote |
-| **Auth** | aucune |
-| **Clé de config** | `cloudflare-docs` |
+| **Auth** | none |
+| **Config key** | `cloudflare-docs` |
 
-Docs produits Cloudflare, Workers, Pages, R2...
+Cloudflare product docs: Workers, Pages, R2…
 
-## Fichiers de config par plateforme
+## Config files per platform
 
-| Fichier | Plateforme | Emplacement |
+| File | Platform | Location |
 |---|---|---|
-| `devin.json` | Devin | fusionner dans `%APPDATA%\devin\mcp_config.json` sous `mcpServers` |
+| `devin.json` | Devin | merge into `%APPDATA%\devin\mcp_config.json` under `mcpServers` |
 | `cursor.json` | Cursor | `.cursor/mcp.json` |
 | `claude-desktop.json` | Claude Desktop | `claude_desktop_config.json` |
-| `vscode.json` | VS Code | `.vscode/mcp.json` (clé `servers`) |
+| `vscode.json` | VS Code | `.vscode/mcp.json` (`servers` key) |
 | `codex.toml` | Codex | `~/.codex/config.toml` |

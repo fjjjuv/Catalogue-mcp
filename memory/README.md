@@ -1,21 +1,23 @@
-# Memory (serveur officiel MCP)
+# Memory (official MCP server)
 
-Graphe de connaissances persistant : entités, relations, observations.
+**[🇫🇷 Français](README_FR.md)**
+
+Persistent knowledge graph: entities, relations, observations.
 
 | | |
 |---|---|
 | **Type** | local stdio |
-| **Auth** | aucune |
-| **Clé de config** | `memory` |
+| **Auth** | none |
+| **Config key** | `memory` |
 
-Mémoire long terme entre sessions.
+Long-term memory across sessions.
 
-## Fichiers de config par plateforme
+## Config files per platform
 
-| Fichier | Plateforme | Emplacement |
+| File | Platform | Location |
 |---|---|---|
-| `devin.json` | Devin | fusionner dans `%APPDATA%\devin\mcp_config.json` sous `mcpServers` |
+| `devin.json` | Devin | merge into `%APPDATA%\devin\mcp_config.json` under `mcpServers` |
 | `cursor.json` | Cursor | `.cursor/mcp.json` |
 | `claude-desktop.json` | Claude Desktop | `claude_desktop_config.json` |
-| `vscode.json` | VS Code | `.vscode/mcp.json` (clé `servers`) |
+| `vscode.json` | VS Code | `.vscode/mcp.json` (`servers` key) |
 | `codex.toml` | Codex | `~/.codex/config.toml` |

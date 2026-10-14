@@ -1,92 +1,94 @@
-# Semgrep — MCP "bricolé" local
+# Semgrep — DIY local MCP
 
-> ⚠️ **Ce n'est pas un serveur MCP classique.** Semgrep est d'abord une
-> **CLI d'analyse statique de sécurité** installée sur la machine. Sa
-> commande `semgrep mcp` transforme la CLI en serveur MCP — c'est nous qui
-> l'avons branché comme serveur dans la config.
+**[🇫🇷 Français](README_FR.md)**
+
+> ⚠️ **This is not a regular MCP server.** Semgrep is first a
+> **static security analysis CLI** installed on the machine. Its
+> `semgrep mcp` command turns the CLI into an MCP server — we wired it
+> up ourselves in the config.
 
 | | |
 |---|---|
 | **Type** | local stdio |
-| **Auth** | aucune (`semgrep login` optionnel pour règles/cloud) |
-| **Clé de config** | `semgrep` |
-| **Version testée** | Semgrep 1.180.0 (installé via `pip install semgrep`) |
+| **Auth** | none (`semgrep login` optional for rules/cloud) |
+| **Config key** | `semgrep` |
+| **Tested version** | Semgrep 1.180.0 (installed via `pip install semgrep`) |
 
-## Comment ça marche
+## How it works
 
-`semgrep mcp` lance le serveur MCP **embarqué dans la CLI** :
+`semgrep mcp` launches the MCP server **built into the CLI**:
 
 ```
-semgrep mcp                      # transport stdio (défaut, ce qu'on utilise)
-semgrep mcp -t streamable-http   # mode serveur HTTP sur port 8000
+semgrep mcp                      # stdio transport (default, what we use)
+semgrep mcp -t streamable-http   # HTTP server mode on port 8000
 ```
 
-Outils exposés à l'agent : `security_check`/`semgrep_scan` (scanner du
-code ou un dossier), `semgrep_rule_schema` (écrire des règles custom),
+Tools exposed to the agent: `security_check`/`semgrep_scan` (scan code
+or a folder), `semgrep_rule_schema` (write custom rules),
 `get_supported_languages`, etc.
 
-### Hooks utiles (`semgrep mcp --hook`)
+### Useful hooks (`semgrep mcp --hook`)
 
-| Hook | Effet |
+| Hook | Effect |
 |---|---|
-| `post-tool-cli-scan` | scan auto après chaque action de l'agent |
-| `stop-cli-scan` + `record-file-edit` | scan à la fin d'une session d'édition |
-| `inject-secure-defaults` | injecte des règles de sécurité dans le contexte |
-| `supply-chain-scan` | scanne les deps quand une commande d'install est détectée |
+| `post-tool-cli-scan` | auto-scan after each agent action |
+| `stop-cli-scan` + `record-file-edit` | scan at the end of an editing session |
+| `inject-secure-defaults` | injects security rules into the context |
+| `supply-chain-scan` | scans deps when an install command is detected |
 
-## Prérequis
+## Requirements
 
 ```bash
-# Vérifier
+# Check
 semgrep --version
 
-# Installer
-pip install semgrep          # ou: brew install semgrep
+# Install
+pip install semgrep          # or: brew install semgrep
 ```
 
-⚠️ **Windows / Devin** : le nom `semgrep` n'est pas toujours trouvé dans
-le PATH de l'application graphique → le serveur peut se marquer
-`"disabled": true` tout seul au chargement. Solution : pointer le chemin
-complet de l'exécutable (voir `devin.json`).
+⚠️ **Windows / Devin**: the `semgrep` name is not always found in the
+GUI application's PATH → the server may mark itself
+`"disabled": true` at load time. Fix: point to the full executable
+path (see `devin.json`).
 
-Chemin typique après `pip install` :
+Typical path after `pip install`:
 `C:\Users\<user>\AppData\Local\Programs\Python\Python312\Scripts\semgrep.exe`
 
-## Scan manuel (sans MCP)
+## Manual scan (no MCP)
 
-Pour un audit ponctuel, la CLI suffit — pas besoin du MCP :
+For a one-off audit, the CLI is enough — no MCP needed:
 
 ```bash
 semgrep scan --config auto --json -o semgrep-results.json
 python -c "import json;d=json.load(open('semgrep-results.json'));print('findings:',len(d['results']))"
 ```
 
-- `--config auto` : ~248 règles du registre public Semgrep
-- Résultat : vulnérabilités, fuites de secrets, mauvaises pratiques
-- Les erreurs de parsing (ex. snapshots `.yml` de Playwright) sont non bloquantes
+- `--config auto`: ~248 rules from the public Semgrep registry
+- Result: vulnerabilities, secret leaks, bad practices
+- Parsing errors (e.g. Playwright `.yml` snapshots) are non-blocking
 
 ## MCP vs CLI vs dashboard
 
-| Besoin | Solution |
+| Need | Solution |
 |---|---|
-| Scan ponctuel | CLI `semgrep scan --config auto` |
-| Sécurité vérifiée en continu pendant que l'agent code | **ce MCP** |
-| Résultats en interface graphique | `semgrep login` + `semgrep ci` → dashboard semgrep.dev (gratuit, envoie les résultats au cloud) |
+| One-off scan | CLI `semgrep scan --config auto` |
+| Security checked continuously while the agent codes | **this MCP** |
+| Results in a GUI | `semgrep login` + `semgrep ci` → semgrep.dev dashboard (free, sends results to the cloud) |
 
-## Fichiers de config par plateforme
+## Config files per platform
 
-| Fichier | Plateforme | Emplacement |
+| File | Platform | Location |
 |---|---|---|
-| `devin.json` | Devin | fusionner dans `%APPDATA%\devin\mcp_config.json` sous `mcpServers` — **chemin absolu recommandé** |
+| `devin.json` | Devin | merge into `%APPDATA%\devin\mcp_config.json` under `mcpServers` — **absolute path recommended** |
 | `cursor.json` | Cursor | `.cursor/mcp.json` |
 | `claude-desktop.json` | Claude Desktop | `claude_desktop_config.json` |
-| `vscode.json` | VS Code | `.vscode/mcp.json` (clé `servers`) |
+| `vscode.json` | VS Code | `.vscode/mcp.json` (`servers` key) |
 | `codex.toml` | Codex | `~/.codex/config.toml` |
 
-## Historique de mise en place
+## Setup history
 
-1. `semgrep --version` → non trouvé → `pip install semgrep` (1.180.0)
-2. Scan initial du projet : 30 fichiers, 248 règles, 0 vulnérabilité
-3. `semgrep mcp` ajouté dans la config globale Devin
-4. Premier chargement → auto-désactivé (`disabled: true`) car `semgrep`
-   pas dans le PATH graphique → corrigé avec le chemin absolu de `semgrep.exe`
+1. `semgrep --version` → not found → `pip install semgrep` (1.180.0)
+2. Initial project scan: 30 files, 248 rules, 0 vulnerabilities
+3. `semgrep mcp` added to the global Devin config
+4. First load → auto-disabled (`disabled: true`) because `semgrep`
+   wasn't in the GUI PATH → fixed with the absolute `semgrep.exe` path

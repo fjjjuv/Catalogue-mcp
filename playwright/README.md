@@ -1,23 +1,24 @@
 # Playwright
 
-Serveur MCP Playwright (Microsoft) — automatisation navigateur pour les
-agents : naviguer, cliquer, remplir des formulaires, capturer des
-screenshots et le DOM.
+**[🇫🇷 Français](README_FR.md)**
+
+Playwright MCP server (Microsoft) — browser automation for agents:
+navigate, click, fill forms, capture screenshots and the DOM.
 
 | | |
 |---|---|
 | Package | `@playwright/mcp` (npm) |
-| Type | Serveur **local** (stdio) — différent des serveurs remote OAuth |
-| Prérequis | Node.js + npx |
+| Type | **local** server (stdio) — unlike remote OAuth servers |
+| Requirements | Node.js + npx |
 
-## Fichiers par plateforme
+## Files per platform
 
-| Fichier | Plateforme | Destination |
+| File | Platform | Destination |
 |---|---|---|
-| `devin.json` | Devin | `mcpServers` de `%APPDATA%\devin\mcp_config.json` — utilise `cmd.exe /c` sous Windows |
-| `cursor.json` | Cursor | `mcpServers` de `.cursor/mcp.json` |
-| `claude-desktop.json` | Claude Desktop | `mcpServers` de `claude_desktop_config.json` |
-| `vscode.json` | VS Code | `servers` de `.vscode/mcp.json` (`"type": "stdio"`) |
+| `devin.json` | Devin | `mcpServers` in `%APPDATA%\devin\mcp_config.json` — uses `cmd.exe /c` on Windows |
+| `cursor.json` | Cursor | `mcpServers` in `.cursor/mcp.json` |
+| `claude-desktop.json` | Claude Desktop | `mcpServers` in `claude_desktop_config.json` |
+| `vscode.json` | VS Code | `servers` in `.vscode/mcp.json` (`"type": "stdio"`) |
 | `codex.toml` | Codex | `~/.codex/config.toml` |
 
 ## Claude Code (CLI)
@@ -38,5 +39,5 @@ codex mcp add playwright -- npx -y @playwright/mcp@latest
 devin mcp add playwright -- cmd.exe /c npx -y @playwright/mcp@latest
 ```
 
-Pas d'OAuth : le serveur se lance localement, les outils
-`browser_*` apparaissent directement.
+No OAuth: the server starts locally and the `browser_*` tools appear
+directly.

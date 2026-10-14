@@ -1,45 +1,48 @@
-# MCP Configs
+# Catalogue-mcp
 
-Collection de configurations prêtes à l'emploi pour connecter des
-**serveurs MCP** aux principaux clients : Devin, Cursor, Claude Desktop,
-VS Code, Codex, Claude Code.
+**[🇫🇷 Version française](README_FR.md)** · 🌐 [Catalogue website](https://fjjjuv.github.io/Catalogue-mcp/)
 
-## Organisation
+Ready-to-use configurations to connect **MCP servers** to the main
+clients: Devin, Cursor, Claude Desktop, VS Code, Codex, Claude Code.
 
-Un dossier par serveur MCP à la racine. Chaque dossier contient tout ce
-qui appartient au serveur : sa doc (`README.md`) et un fichier de config
-par plateforme, nommé d'après la plateforme.
+## Layout
+
+One folder per MCP server at the root. Each folder contains everything
+belonging to that server: its docs (`README.md` in English,
+`README_FR.md` in French) and one config file per platform, named after
+the platform.
 
 ```
-<serveur>/
-  README.md            # infos du serveur + instructions par client
-  devin.json           # → mcp_config.json de Devin
+<server>/
+  README.md            # server info + per-client instructions (EN)
+  README_FR.md         # same doc in French
+  devin.json           # → Devin's mcp_config.json
   cursor.json          # → .cursor/mcp.json
   claude-desktop.json  # → claude_desktop_config.json
-  vscode.json          # → .vscode/mcp.json (clé "servers")
+  vscode.json          # → .vscode/mcp.json ("servers" key)
   codex.toml           # → ~/.codex/config.toml
 ```
 
-## Serveurs
+## Servers
 
-| Dossier | Serveur | Type | Auth |
+| Folder | Server | Type | Auth |
 |---|---|---|---|
-| [`trello/`](trello/) | Trello (officiel Atlassian) | remote `https://mcp.trello.com/v1` | OAuth 2.0 |
+| [`trello/`](trello/) | Trello (official Atlassian) | remote `https://mcp.trello.com/v1` | OAuth 2.0 |
 | [`asana/`](asana/) | Asana | remote `https://mcp.asana.com/v2/mcp` | OAuth 2.0 |
-| [`github/`](github/) | GitHub MCP Server (officiel) | remote `https://api.githubcopilot.com/mcp` | OAuth / token |
-| [`exa-code/`](exa-code/) | Exa Code | remote `https://mcp.exa.ai/mcp` | compte Exa |
-| [`deepwiki/`](deepwiki/) | DeepWiki | remote `https://mcp.deepwiki.com/mcp` | aucune |
-| [`cloudflare-docs/`](cloudflare-docs/) | Cloudflare Docs | remote `https://docs.mcp.cloudflare.com/mcp` | aucune |
-| [`playwright/`](playwright/) | Playwright | local stdio (`npx @playwright/mcp`) | aucune |
-| [`puppeteer/`](puppeteer/) | Puppeteer | local stdio (`npx @modelcontextprotocol/server-puppeteer`) | aucune |
-| [`computer-use/`](computer-use/) | Computer Use | local stdio (`npx computer-use-mcp`) | aucune |
-| [`context7/`](context7/) | Context7 (Upstash) | local stdio (`npx @upstash/context7-mcp`) | aucune |
-| [`memory/`](memory/) | Memory (officiel MCP) | local stdio (`npx @modelcontextprotocol/server-memory`) | aucune |
-| [`semgrep/`](semgrep/) | Semgrep | local stdio (`semgrep mcp`) | aucune |
+| [`github/`](github/) | GitHub MCP Server (official) | remote `https://api.githubcopilot.com/mcp` | OAuth / token |
+| [`exa-code/`](exa-code/) | Exa Code | remote `https://mcp.exa.ai/mcp` | Exa account |
+| [`deepwiki/`](deepwiki/) | DeepWiki | remote `https://mcp.deepwiki.com/mcp` | none |
+| [`cloudflare-docs/`](cloudflare-docs/) | Cloudflare Docs | remote `https://docs.mcp.cloudflare.com/mcp` | none |
+| [`playwright/`](playwright/) | Playwright | local stdio (`npx @playwright/mcp`) | none |
+| [`puppeteer/`](puppeteer/) | Puppeteer | local stdio (`npx @modelcontextprotocol/server-puppeteer`) | none |
+| [`computer-use/`](computer-use/) | Computer Use | local stdio (`npx computer-use-mcp`) | none |
+| [`context7/`](context7/) | Context7 (Upstash) | local stdio (`npx @upstash/context7-mcp`) | none |
+| [`memory/`](memory/) | Memory (official MCP) | local stdio (`npx @modelcontextprotocol/server-memory`) | none |
+| [`semgrep/`](semgrep/) | Semgrep | local stdio (`semgrep mcp`) | none |
 
-## Formats par plateforme
+## Config formats per platform
 
-| Plateforme | Clé racine | Format |
+| Platform | Root key | Format |
 |---|---|---|
 | Devin | `mcpServers` | JSON |
 | Cursor | `mcpServers` | JSON |
@@ -50,9 +53,9 @@ par plateforme, nommé d'après la plateforme.
 
 ## Secrets
 
-Ne jamais commiter de secrets. Utiliser `${env:VAR}` quand le client le
-supporte (Devin), sinon des variables d'environnement.
+Never commit secrets. Use `${env:VAR}` when the client supports it
+(Devin), otherwise environment variables.
 
-## Licence
+## License
 
 [MIT](LICENSE)

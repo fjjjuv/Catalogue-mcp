@@ -1,21 +1,23 @@
-# GitHub MCP Server (officiel)
+# GitHub MCP Server (official)
 
-Accès à l'API GitHub : repos, fichiers, issues, PR, releases, commits, recherche de code.
+**[🇫🇷 Français](README_FR.md)**
+
+Access to the GitHub API: repos, files, issues, PRs, releases, commits, code search.
 
 | | |
 |---|---|
 | **Type** | remote |
-| **Auth** | OAuth / token GitHub |
-| **Clé de config** | `github` |
+| **Auth** | OAuth / GitHub token |
+| **Config key** | `github` |
 
-Read-only + Write selon les scopes accordés.
+Read-only + write depending on granted scopes.
 
-## Fichiers de config par plateforme
+## Config files per platform
 
-| Fichier | Plateforme | Emplacement |
+| File | Platform | Location |
 |---|---|---|
-| `devin.json` | Devin | fusionner dans `%APPDATA%\devin\mcp_config.json` sous `mcpServers` |
+| `devin.json` | Devin | merge into `%APPDATA%\devin\mcp_config.json` under `mcpServers` |
 | `cursor.json` | Cursor | `.cursor/mcp.json` |
 | `claude-desktop.json` | Claude Desktop | `claude_desktop_config.json` |
-| `vscode.json` | VS Code | `.vscode/mcp.json` (clé `servers`) |
+| `vscode.json` | VS Code | `.vscode/mcp.json` (`servers` key) |
 | `codex.toml` | Codex | `~/.codex/config.toml` |
