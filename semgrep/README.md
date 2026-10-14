@@ -1,6 +1,8 @@
 # Semgrep — DIY local MCP
 
 **[🇫🇷 Français](README_FR.md)**
+📄 **Full guide, examples & rating:** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/semgrep.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/semgrep.html)
+
 
 > ⚠️ **This is not a regular MCP server.** Semgrep is first a
 > **static security analysis CLI** installed on the machine. Its

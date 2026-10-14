@@ -1,6 +1,8 @@
 # Computer Use
 
 **[🇬🇧 English](README.md)**
+📄 **Guide complet, exemples & note :** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/computer-use.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/computer-use.html)
+
 
 Contrôle du poste : souris, clavier, screenshots d'écran.
 

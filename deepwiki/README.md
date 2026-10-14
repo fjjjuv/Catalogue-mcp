@@ -1,6 +1,8 @@
 # DeepWiki
 
 **[🇫🇷 Français](README_FR.md)**
+📄 **Full guide, examples & rating:** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/deepwiki.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/deepwiki.html)
+
 
 AI-generated documentation for GitHub repositories (wiki structure, Q&A on a codebase).
 

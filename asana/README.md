@@ -1,6 +1,8 @@
 # Asana
 
 **[🇫🇷 Français](README_FR.md)**
+📄 **Full guide, examples & rating:** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/asana.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/asana.html)
+
 
 Asana's official MCP server.
 

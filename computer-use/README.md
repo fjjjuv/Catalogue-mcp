@@ -1,6 +1,8 @@
 # Computer Use
 
 **[🇫🇷 Français](README_FR.md)**
+📄 **Full guide, examples & rating:** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/computer-use.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/computer-use.html)
+
 
 Desktop control: mouse, keyboard, screen screenshots.
 

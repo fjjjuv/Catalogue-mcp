@@ -1,6 +1,8 @@
 # Context7 (Upstash)
 
 **[🇫🇷 Français](README_FR.md)**
+📄 **Full guide, examples & rating:** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/context7.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/context7.html)
+
 
 Up-to-date library documentation + code examples injected into context.
 

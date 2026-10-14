@@ -1,6 +1,8 @@
 # Exa Code
 
 **[🇫🇷 Français](README_FR.md)**
+📄 **Full guide, examples & rating:** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/exa-code.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/exa-code.html)
+
 
 Web/code search powered by the Exa API.
 

@@ -1,6 +1,8 @@
 # Playwright
 
 **[🇬🇧 English](README.md)**
+📄 **Guide complet, exemples & note :** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/playwright.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/playwright.html)
+
 
 Serveur MCP Playwright (Microsoft) — automatisation navigateur pour les
 agents : naviguer, cliquer, remplir des formulaires, capturer des

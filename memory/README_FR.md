@@ -1,6 +1,8 @@
 # Memory (serveur officiel MCP)
 
 **[🇬🇧 English](README.md)**
+📄 **Guide complet, exemples & note :** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/memory.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/memory.html)
+
 
 Graphe de connaissances persistant : entités, relations, observations.
 

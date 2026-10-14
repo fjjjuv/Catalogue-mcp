@@ -1,6 +1,8 @@
 # Memory (official MCP server)
 
 **[🇫🇷 Français](README_FR.md)**
+📄 **Full guide, examples & rating:** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/memory.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/memory.html)
+
 
 Persistent knowledge graph: entities, relations, observations.
 

@@ -39,20 +39,20 @@ format.
 
 ## 📦 Les serveurs
 
-| Dossier | Serveur | Super-pouvoir | Type | Auth |
-|---|---|---|---|---|
-| [`trello/`](trello/) | Trello (officiel Atlassian) | Gère boards, cartes & checklists | remote | OAuth 2.0 |
-| [`github/`](github/) | GitHub MCP Server | Repos, issues, PR, recherche de code | remote | OAuth / token |
-| [`asana/`](asana/) | Asana | Tâches & projets | remote | OAuth 2.0 |
-| [`deepwiki/`](deepwiki/) | DeepWiki | Q&A sur n'importe quel codebase | remote | aucune |
-| [`exa-code/`](exa-code/) | Exa Code | Recherche de code sémantique | remote | compte Exa |
-| [`cloudflare-docs/`](cloudflare-docs/) | Cloudflare Docs | Doc officielle Cloudflare | remote | aucune |
-| [`playwright/`](playwright/) | Playwright | Automatisation navigateur réelle | local stdio | aucune |
-| [`puppeteer/`](puppeteer/) | Puppeteer | Automatisation Chrome via CDP | local stdio | aucune |
-| [`computer-use/`](computer-use/) | Computer Use | Souris & clavier sur votre PC | local stdio | aucune |
-| [`context7/`](context7/) | Context7 (Upstash) | Doc des libs à jour dans le contexte | local stdio | aucune |
-| [`memory/`](memory/) | Memory | Graphe de connaissances persistant | local stdio | aucune |
-| [`semgrep/`](semgrep/) | Semgrep | Scans de sécurité pendant le code | local stdio | aucune |
+| Dossier | Serveur | Super-pouvoir | Type | Auth | 📖 |
+|---|---|---|---|---|---|
+| [`trello/`](trello/) | Trello (officiel Atlassian) | Gère boards, cartes & checklists | remote | OAuth 2.0 | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/trello.html) |
+| [`github/`](github/) | GitHub MCP Server | Repos, issues, PR, recherche de code | remote | OAuth / token | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/github.html) |
+| [`asana/`](asana/) | Asana | Tâches & projets | remote | OAuth 2.0 | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/asana.html) |
+| [`deepwiki/`](deepwiki/) | DeepWiki | Q&A sur n'importe quel codebase | remote | aucune | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/deepwiki.html) |
+| [`exa-code/`](exa-code/) | Exa Code | Recherche de code sémantique | remote | compte Exa | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/exa-code.html) |
+| [`cloudflare-docs/`](cloudflare-docs/) | Cloudflare Docs | Doc officielle Cloudflare | remote | aucune | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/cloudflare-docs.html) |
+| [`playwright/`](playwright/) | Playwright | Automatisation navigateur réelle | local stdio | aucune | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/playwright.html) |
+| [`puppeteer/`](puppeteer/) | Puppeteer | Automatisation Chrome via CDP | local stdio | aucune | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/puppeteer.html) |
+| [`computer-use/`](computer-use/) | Computer Use | Souris & clavier sur votre PC | local stdio | aucune | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/computer-use.html) |
+| [`context7/`](context7/) | Context7 (Upstash) | Doc des libs à jour dans le contexte | local stdio | aucune | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/context7.html) |
+| [`memory/`](memory/) | Memory | Graphe de connaissances persistant | local stdio | aucune | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/memory.html) |
+| [`semgrep/`](semgrep/) | Semgrep | Scans de sécurité pendant le code | local stdio | aucune | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/semgrep.html) |
 
 📊 Comparatif complet & notes → **[fjjjuv.github.io/Catalogue-mcp](https://fjjjuv.github.io/Catalogue-mcp/)**
 

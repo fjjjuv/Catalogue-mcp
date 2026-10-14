@@ -1,6 +1,8 @@
 # Semgrep — MCP "bricolé" local
 
 **[🇬🇧 English](README.md)**
+📄 **Guide complet, exemples & note :** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/semgrep.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/semgrep.html)
+
 
 > ⚠️ **Ce n'est pas un serveur MCP classique.** Semgrep est d'abord une
 > **CLI d'analyse statique de sécurité** installée sur la machine. Sa

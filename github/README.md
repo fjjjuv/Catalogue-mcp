@@ -1,6 +1,8 @@
 # GitHub MCP Server (official)
 
 **[🇫🇷 Français](README_FR.md)**
+📄 **Full guide, examples & rating:** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/github.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/github.html)
+
 
 Access to the GitHub API: repos, files, issues, PRs, releases, commits, code search.
 

@@ -1,6 +1,8 @@
 # Puppeteer
 
 **[🇫🇷 Français](README_FR.md)**
+📄 **Full guide, examples & rating:** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/puppeteer.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/puppeteer.html)
+
 
 Chrome browser automation: navigation, screenshots, JS execution.
 

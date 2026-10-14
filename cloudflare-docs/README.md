@@ -1,6 +1,8 @@
 # Cloudflare Docs
 
 **[🇫🇷 Français](README_FR.md)**
+📄 **Full guide, examples & rating:** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/cloudflare-docs.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/cloudflare-docs.html)
+
 
 Search the official Cloudflare documentation.
 

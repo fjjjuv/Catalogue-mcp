@@ -1,6 +1,8 @@
 # DeepWiki
 
 **[🇬🇧 English](README.md)**
+📄 **Guide complet, exemples & note :** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/deepwiki.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/deepwiki.html)
+
 
 Documentation IA des dépôts GitHub (structure wiki, Q&A sur un codebase).
 

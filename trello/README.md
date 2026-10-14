@@ -1,6 +1,8 @@
 # Trello (official MCP server)
 
 **[🇫🇷 Français](README_FR.md)**
+📄 **Full guide, examples & rating:** [https://fjjjuv.github.io/Catalogue-mcp/serveurs/trello.html](https://fjjjuv.github.io/Catalogue-mcp/serveurs/trello.html)
+
 
 Official MCP server hosted by Atlassian.
 
