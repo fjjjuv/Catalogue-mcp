@@ -1,71 +1,71 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en" data-page="gd">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guide — c&#x27;est quoi le MCP et comment installer un serveur | mcp-configs</title>
-<meta name="description" content="Comprendre le Model Context Protocol : fonctionnement, remote vs stdio, et comment installer un serveur MCP sur Devin, Cursor, Claude Desktop, VS Code et Codex.">
+<title>Guide — what is MCP and how to install a server | catalogue-mcp</title>
+<meta name="description" content="Understand the Model Context Protocol: how it works, remote vs stdio, and install an MCP server on Devin, Cursor, Claude Desktop, VS Code and Codex.">
+<meta name="google-site-verification" content="PASTE_GSC_CODE_HERE">
+<script data-goatcounter="https://catalogue-mcp.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <link rel="canonical" href="https://fjjjuv.github.io/mcp-configs/guide.html">
-<meta property="og:title" content="Guide — c&#x27;est quoi le MCP et comment installer un serveur | mcp-configs">
-<meta property="og:description" content="Comprendre le Model Context Protocol : fonctionnement, remote vs stdio, et comment installer un serveur MCP sur Devin, Cursor, Claude Desktop, VS Code et Codex.">
+<meta property="og:title" content="Guide — what is MCP and how to install a server | catalogue-mcp">
+<meta property="og:description" content="Understand the Model Context Protocol: how it works, remote vs stdio, and install an MCP server on Devin, Cursor, Claude Desktop, VS Code and Codex.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fjjjuv.github.io/mcp-configs/guide.html">
-<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0c0c10">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="https://fjjjuv.github.io/mcp-configs/logo.svg">
+<link rel="apple-touch-icon" href="https://fjjjuv.github.io/mcp-configs/logo.svg">
 <link rel="stylesheet" href="https://fjjjuv.github.io/mcp-configs/style.css">
 
 </head>
 <body>
-<header><a href="https://fjjjuv.github.io/mcp-configs/" style="color:var(--txt);font-weight:700">🧩 mcp-configs</a>
-<nav>
-<a href="https://fjjjuv.github.io/mcp-configs/">Accueil</a>
-<a href="https://fjjjuv.github.io/mcp-configs/serveurs.html">Serveurs</a>
-<a href="https://fjjjuv.github.io/mcp-configs/comparatif.html">Comparatif</a>
-<a href="https://fjjjuv.github.io/mcp-configs/guide.html">Guide</a>
-<a href="https://github.com/fjjjuv/mcp-configs">GitHub ↗</a>
-</nav></header>
-<div class="wrap"><h1>Guide : comprendre et installer un MCP</h1>
-<h2>Le principe</h2>
-<p>Un <b>serveur MCP</b> expose des <i>outils</i> (functions) que l'agent IA peut appeler : <code>list_boards</code>,
-<code>create_file</code>, <code>browser_navigate</code>… Le client IA (Devin, Claude, Cursor…) lance le serveur au
-démarrage et découvre ses outils automatiquement.</p>
-<h2>Remote vs local</h2>
-<table><tr><th></th><th>Remote (HTTPS)</th><th>Local (stdio)</th></tr>
-<tr><td>Lancement</td><td>déjà hébergé, juste une URL</td><td>commande <code>npx</code>/binaire exécutée par le client</td></tr>
-<tr><td>Auth</td><td>souvent OAuth (navigateur) ou clé API</td><td>généralement aucune — tourne sur votre machine</td></tr>
-<tr><td>Exemples</td><td>Trello, GitHub, DeepWiki, Exa</td><td>Playwright, Memory, Semgrep, Context7</td></tr></table>
-<h2>Installer sur Devin</h2>
-<p>Fusionner dans <code>%APPDATA%\devin\mcp_config.json</code> sous <code>mcpServers</code> :</p>
-<pre>{
-  "mcpServers": {
-    "trello": { "url": "https://mcp.trello.com/v1", "transport": "http" },
-    "memory": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-memory"] }
-  }
-}</pre>
-<p>Redémarrer Devin → le serveur apparaît dans les MCP actifs. Sous Windows, préférer
-<code>"command": "cmd.exe", "args": ["/c", "npx", "-y", "..."]</code> quand <code>npx</code> n'est pas trouvé.</p>
-<h2>Les autres plateformes</h2>
-<table><tr><th>Plateforme</th><th>Fichier</th><th>Clé racine</th></tr>
+<header class="site-header"><div class="container nav">
+<a class="logo" href="https://fjjjuv.github.io/mcp-configs/"><img class="logo-icon" src="https://fjjjuv.github.io/mcp-configs/logo.svg" alt="catalogue-mcp" width="28" height="28"> catalogue-mcp</a>
+<nav><ul class="nav-links">
+<li><a href="https://fjjjuv.github.io/mcp-configs/" data-i18n="nav_home">Home</a></li>
+<li><a href="https://fjjjuv.github.io/mcp-configs/serveurs.html" data-i18n="nav_servers">Servers</a></li>
+<li><a href="https://fjjjuv.github.io/mcp-configs/comparatif.html" data-i18n="nav_compare">Compare</a></li>
+<li><a href="https://fjjjuv.github.io/mcp-configs/guide.html" data-i18n="nav_guide">Guide</a></li>
+</ul></nav>
+<div class="nav-actions">
+<select class="lang-switch" id="lang-switch" aria-label="Language">
+<option value="en">🇬🇧 EN</option><option value="fr">🇫🇷 FR</option>
+</select>
+<a class="btn btn-secondary" style="padding:.45rem .9rem;font-size:.85rem" href="https://github.com/fjjjuv/mcp-configs">GitHub ↗</a>
+</div>
+</div></header>
+<div class="container page-section"><h1 data-i18n="gd_h1">Guide: understanding &amp; installing an MCP</h1>
+<h2 data-i18n="gd_prin" style="text-align:left">The principle</h2><p data-i18n="gd_p1">An MCP server exposes tools (functions) the AI agent can call: list_boards, create_file, browser_navigate… The AI client (Devin, Claude, Cursor…) launches the server at startup and discovers its tools automatically.</p>
+<h2 data-i18n="gd_rl" style="text-align:left">Remote vs local</h2>
+<div class="table-wrap"><table><tr><th></th><th>Remote (HTTPS)</th><th>Local (stdio)</th></tr>
+<tr><td><b data-i18n="gd_launch">Launch</b></td><td data-i18n="gd_launch_r">already hosted, just a URL</td><td data-i18n="gd_launch_l">npx/binary command run by the client</td></tr>
+<tr><td><b data-i18n="auth">Authentication</b></td><td data-i18n="gd_auth_r">often OAuth (browser) or API key</td><td data-i18n="gd_auth_l">usually none — runs on your machine</td></tr>
+<tr><td><b>Exemples</b></td><td>Trello, GitHub, DeepWiki, Exa</td><td>Playwright, Memory, Semgrep, Context7</td></tr></table></div>
+<h2 data-i18n="gd_devin" style="text-align:left">Install on Devin</h2>
+<p data-i18n="gd_devin_p">Merge into %APPDATA%\devin\mcp_config.json under mcpServers:</p>
+<pre>{<br>&nbsp;&nbsp;"mcpServers": {<br>&nbsp;&nbsp;&nbsp;&nbsp;"trello": { "url": "https://mcp.trello.com/v1", "transport": "http" },<br>&nbsp;&nbsp;&nbsp;&nbsp;"memory": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-memory"] }<br>&nbsp;&nbsp;}<br>}</pre>
+<p data-i18n="gd_devin_p2">Restart Devin → the server shows in active MCPs. On Windows prefer cmd.exe /c npx when npx isn&#x27;t found.</p>
+<h2 data-i18n="gd_plat" style="text-align:left">Other platforms</h2>
+<div class="table-wrap"><table><tr><th>Plateforme</th><th data-i18n="gd_file">File</th><th data-i18n="gd_key">Root key</th></tr>
 <tr><td>Cursor</td><td><code>.cursor/mcp.json</code></td><td><code>mcpServers</code></td></tr>
 <tr><td>Claude Desktop</td><td><code>claude_desktop_config.json</code></td><td><code>mcpServers</code></td></tr>
 <tr><td>VS Code</td><td><code>.vscode/mcp.json</code></td><td><code>servers</code> + <code>type</code></td></tr>
 <tr><td>Codex</td><td><code>~/.codex/config.toml</code></td><td><code>[mcp_servers.*]</code></td></tr>
-<tr><td>Claude Code</td><td>via CLI</td><td><code>claude mcp add</code></td></tr></table>
-<h2>Pièges rencontrés (vrai vécu)</h2>
-<ul>
-<li><b>OAuth Trello</b> : le consentement générique échoue → il faut relancer avec les scopes explicites
-(<code>read:board:trello write:board:trello</code>…)</li>
-<li><b>Windows + npx</b> : l'app graphique ne trouve pas toujours <code>npx</code> dans le PATH →
-utiliser <code>cmd.exe /c npx</code> ou le chemin absolu de l'exécutable</li>
-<li><b>Serveur auto-désactivé</b> : un échec de démarrage ajoute <code>"disabled": true</code> à la config — vérifiez-la</li>
-<li><b>Chemin absolu requis parfois</b> : ex. Semgrep — <code>semgrep.exe</code> complet plutôt que <code>semgrep</code></li>
-</ul>
-<h2>Sécurité</h2>
-<ul>
-<li>Ne jamais commiter de token/secret dans les configs — utiliser des variables d'environnement</li>
-<li>Un MCP local tourne avec VOS droits : <code>computer-use</code> clique réellement, <code>semgrep</code> lit vos fichiers</li>
-<li>OAuth = jeton révocable : préférez-le aux clés en dur</li>
-</ul>
+<tr><td>Claude Code</td><td>via CLI</td><td><code>claude mcp add</code></td></tr></table></div>
+<h2 data-i18n="gd_pit" style="text-align:left">Pitfalls (real experience)</h2><ul>
+<li data-i18n="gd_pit1" data-i18n-html="1"><b>Trello OAuth</b>: the generic consent fails → relaunch with explicit scopes (read:board:trello write:board:trello…)</li>
+<li data-i18n="gd_pit2" data-i18n-html="1"><b>Windows + npx</b>: GUI apps don't always find npx in PATH → use cmd.exe /c npx or the binary's absolute path</li>
+<li data-i18n="gd_pit3" data-i18n-html="1"><b>Auto-disabled server</b>: a startup failure adds "disabled": true to the config — check it</li>
+<li data-i18n="gd_pit4" data-i18n-html="1"><b>Absolute path sometimes required</b>: e.g. Semgrep — full semgrep.exe path rather than semgrep</li></ul>
+<h2 data-i18n="gd_sec" style="text-align:left">Security</h2><ul>
+<li data-i18n="gd_sec1">Never commit tokens/secrets in configs — use environment variables</li><li data-i18n="gd_sec2">A local MCP runs with YOUR rights: computer-use really clicks, semgrep reads your files</li><li data-i18n="gd_sec3">OAuth = revocable token: prefer it over hardcoded keys</li></ul>
 </div>
-<footer>Déployé via GitHub Pages depuis la branche <code>gh-pages</code> ·
-<a href="https://github.com/fjjjuv/mcp-configs">dépôt mcp-configs</a> · config MCP — Model Context Protocol</footer>
+<button class="back-to-top" id="backTop" aria-label="Top">↑</button>
+<script src="https://fjjjuv.github.io/mcp-configs/i18n.js"></script>
+<script src="https://fjjjuv.github.io/mcp-configs/app.js"></script>
 </body></html>
