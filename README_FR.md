@@ -1,47 +1,76 @@
-# Catalogue-mcp
+<p align="center">
+  <img src="https://fjjjuv.github.io/Catalogue-mcp/logo.svg" alt="Catalogue-mcp" width="96" height="96">
+</p>
 
-**[🇬🇧 English version](README.md)** · 🌐 [Site catalogue](https://fjjjuv.github.io/Catalogue-mcp/)
+<h1 align="center">Catalogue-mcp</h1>
 
-Collection de configurations prêtes à l'emploi pour connecter des
-**serveurs MCP** aux principaux clients : Devin, Cursor, Claude Desktop,
-VS Code, Codex, Claude Code.
+<p align="center">
+  <strong>12 serveurs MCP. 6 plateformes. Une config plug-and-play pour chacun.</strong><br>
+  Donnez à votre agent IA de vrais super-pouvoirs — boards, repos, navigateur, mémoire, scans de sécurité.
+</p>
 
-## Organisation
+<p align="center">
+  <a href="https://fjjjuv.github.io/Catalogue-mcp/">🌐 Site web</a> •
+  <a href="README.md">🇬🇧 English</a> •
+  <a href="LICENSE">📄 Licence MIT</a>
+</p>
 
-Un dossier par serveur MCP à la racine. Chaque dossier contient tout ce
-qui appartient au serveur : sa doc (`README.md` en anglais,
-`README_FR.md` en français) et un fichier de config par plateforme,
-nommé d'après la plateforme.
+<p align="center">
+  <img src="https://img.shields.io/badge/serveurs_MCP-12-6366f1" alt="12 serveurs">
+  <img src="https://img.shields.io/badge/plateformes-6-38bdf8" alt="6 plateformes">
+  <img src="https://img.shields.io/badge/co%C3%BBt-100%25_gratuit-34d399" alt="gratuit">
+  <img src="https://img.shields.io/badge/licence-MIT-f59e0b" alt="MIT">
+</p>
+
+---
+
+## 🚀 Pourquoi ce dépôt
+
+Un serveur MCP = une nouvelle compétence pour votre agent. Ce catalogue
+vous donne **le fichier de config exact** à déposer dans Devin, Cursor,
+Claude Desktop, VS Code ou Codex — sans fouiller la doc, sans deviner le
+format.
+
+- ⚡ **Zéro copier-coller** — l'agent lit/écrit directement dans vos outils (Trello, GitHub…)
+- 📚 **Vérité terrain** — Context7 et DeepWiki injectent la vraie doc à jour
+- 🔒 **Sécurité continue** — Semgrep scanne pendant que l'agent écrit
+- 🖥️ **Actions réelles** — Playwright navigue pour de vrai, Computer Use clique sur votre bureau
+- 🧠 **Mémoire** — vos préférences survivent entre les sessions
+
+## 📦 Les serveurs
+
+| Dossier | Serveur | Super-pouvoir | Type | Auth |
+|---|---|---|---|---|
+| [`trello/`](trello/) | Trello (officiel Atlassian) | Gère boards, cartes & checklists | remote | OAuth 2.0 |
+| [`github/`](github/) | GitHub MCP Server | Repos, issues, PR, recherche de code | remote | OAuth / token |
+| [`asana/`](asana/) | Asana | Tâches & projets | remote | OAuth 2.0 |
+| [`deepwiki/`](deepwiki/) | DeepWiki | Q&A sur n'importe quel codebase | remote | aucune |
+| [`exa-code/`](exa-code/) | Exa Code | Recherche de code sémantique | remote | compte Exa |
+| [`cloudflare-docs/`](cloudflare-docs/) | Cloudflare Docs | Doc officielle Cloudflare | remote | aucune |
+| [`playwright/`](playwright/) | Playwright | Automatisation navigateur réelle | local stdio | aucune |
+| [`puppeteer/`](puppeteer/) | Puppeteer | Automatisation Chrome via CDP | local stdio | aucune |
+| [`computer-use/`](computer-use/) | Computer Use | Souris & clavier sur votre PC | local stdio | aucune |
+| [`context7/`](context7/) | Context7 (Upstash) | Doc des libs à jour dans le contexte | local stdio | aucune |
+| [`memory/`](memory/) | Memory | Graphe de connaissances persistant | local stdio | aucune |
+| [`semgrep/`](semgrep/) | Semgrep | Scans de sécurité pendant le code | local stdio | aucune |
+
+📊 Comparatif complet & notes → **[fjjjuv.github.io/Catalogue-mcp](https://fjjjuv.github.io/Catalogue-mcp/)**
+
+## 🛠️ Organisation
+
+Un dossier par serveur, un fichier de config par plateforme — le nom
+dit où il va :
 
 ```
 <serveur>/
-  README.md            # infos du serveur + instructions par client (EN)
-  README_FR.md         # même doc en français
-  devin.json           # → mcp_config.json de Devin
+  README.md            # doc du serveur (EN)
+  README_FR.md         # doc (FR)
+  devin.json           # → %APPDATA%\devin\mcp_config.json
   cursor.json          # → .cursor/mcp.json
   claude-desktop.json  # → claude_desktop_config.json
   vscode.json          # → .vscode/mcp.json (clé "servers")
   codex.toml           # → ~/.codex/config.toml
 ```
-
-## Serveurs
-
-| Dossier | Serveur | Type | Auth |
-|---|---|---|---|
-| [`trello/`](trello/) | Trello (officiel Atlassian) | remote `https://mcp.trello.com/v1` | OAuth 2.0 |
-| [`asana/`](asana/) | Asana | remote `https://mcp.asana.com/v2/mcp` | OAuth 2.0 |
-| [`github/`](github/) | GitHub MCP Server (officiel) | remote `https://api.githubcopilot.com/mcp` | OAuth / token |
-| [`exa-code/`](exa-code/) | Exa Code | remote `https://mcp.exa.ai/mcp` | compte Exa |
-| [`deepwiki/`](deepwiki/) | DeepWiki | remote `https://mcp.deepwiki.com/mcp` | aucune |
-| [`cloudflare-docs/`](cloudflare-docs/) | Cloudflare Docs | remote `https://docs.mcp.cloudflare.com/mcp` | aucune |
-| [`playwright/`](playwright/) | Playwright | local stdio (`npx @playwright/mcp`) | aucune |
-| [`puppeteer/`](puppeteer/) | Puppeteer | local stdio (`npx @modelcontextprotocol/server-puppeteer`) | aucune |
-| [`computer-use/`](computer-use/) | Computer Use | local stdio (`npx computer-use-mcp`) | aucune |
-| [`context7/`](context7/) | Context7 (Upstash) | local stdio (`npx @upstash/context7-mcp`) | aucune |
-| [`memory/`](memory/) | Memory (officiel MCP) | local stdio (`npx @modelcontextprotocol/server-memory`) | aucune |
-| [`semgrep/`](semgrep/) | Semgrep | local stdio (`semgrep mcp`) | aucune |
-
-## Formats par plateforme
 
 | Plateforme | Clé racine | Format |
 |---|---|---|
@@ -52,11 +81,6 @@ nommé d'après la plateforme.
 | Codex | `mcp_servers.*` | TOML |
 | Claude Code | via `claude mcp add` | CLI |
 
-## Secrets
+## 📄 Licence
 
-Ne jamais commiter de secrets. Utiliser `${env:VAR}` quand le client le
-supporte (Devin), sinon des variables d'environnement.
-
-## Licence
-
-[MIT](LICENSE)
+[MIT](LICENSE) — gratuit, open source, faites-en ce que vous voulez.
