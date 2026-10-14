@@ -1,6 +1,6 @@
 {
   "semgrep": {
-    "command": "semgrep",
+    "command": "C:\\Users\\juvanyju\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\semgrep.exe",
     "args": [
       "mcp"
     ]
