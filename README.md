@@ -5,7 +5,7 @@
 <h1 align="center">Catalogue-mcp</h1>
 
 <p align="center">
-  <strong>12 MCP servers. 6 platforms. One plug-and-play config each.</strong><br>
+  <strong>13 MCP servers. 6 platforms. One plug-and-play config each.</strong><br>
   Give your AI agent real superpowers — boards, repos, browsers, memory, security scans.
 </p>
 
@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/MCP_servers-12-6366f1" alt="12 servers">
+  <img src="https://img.shields.io/badge/MCP_servers-13-6366f1" alt="13 servers">
   <img src="https://img.shields.io/badge/platforms-6-38bdf8" alt="6 platforms">
   <img src="https://img.shields.io/badge/cost-100%25_free-34d399" alt="free">
   <img src="https://img.shields.io/badge/license-MIT-f59e0b" alt="MIT">
@@ -52,6 +52,7 @@ VS Code or Codex — no docs digging, no format guessing.
 | [`context7/`](context7/) | Context7 (Upstash) | Fresh library docs in context | local stdio | none | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/context7.html) |
 | [`memory/`](memory/) | Memory | Knowledge graph across sessions | local stdio | none | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/memory.html) |
 | [`semgrep/`](semgrep/) | Semgrep | Security scans while coding | local stdio | none | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/semgrep.html) |
+| [`xerj/`](xerj/) | XERJ | Search engine + agent memory (autoindex) | local stdio | none | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/xerj.html) |
 
 📊 Full comparison & ratings → **[fjjjuv.github.io/Catalogue-mcp](https://fjjjuv.github.io/Catalogue-mcp/)**
 

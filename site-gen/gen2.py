@@ -229,6 +229,21 @@ S = [
           ("Read what's on screen","desktop vision","Lis ce qui s'affiche à l'écran","vision du bureau")],
       w_en="⚠️ Powerful: for apps with no API or scriptable interface. Use knowingly — the agent acts on your real machine.",
       w_fr="⚠️ Puissant : pour les applications sans API ni interface scriptable. À utiliser en connaissance de cause — l'agent agit sur votre poste réel."),
+ dict(slug="xerj", name="XERJ", official=False, score=4.6, diff=3,
+     cat_en="Search & memory", cat_fr="Recherche & mémoire",
+     typ_en="local stdio + local node", typ_fr="local stdio + nœud local",
+     auth_en="none (--insecure) or ApiKey", auth_fr="aucune (--insecure) ou ApiKey",
+     cout_en="Free", cout_fr="Gratuit",
+     url="xerj mcp (built into the engine binary)",
+     r_en="Rust search engine (ES-compatible) with the MCP server inside the binary: autoindex turns any folder into queryable indices, plus durable agent memory.",
+     r_fr="Moteur de recherche Rust (compatible ES) avec le serveur MCP dans le binaire : autoindex rend tout dossier interrogeable, plus une mémoire d'agent durable.",
+     f_en=["Index code, docs, logs and PDFs (xerj autoindex)","Definition-first code search over ax-* indices","Long-term agent memory (xerj_memory_*)","Semantic, vector and hybrid search"],
+     f_fr=["Indexer code, docs, logs et PDFs (xerj autoindex)","Recherche code « définition d'abord » sur les index ax-*","Mémoire d'agent long terme (xerj_memory_*)","Recherche sémantique, vectorielle et hybride"],
+     ex=[("Index this folder then find where login() is defined","autoindex + ranked passage","Indexe ce dossier puis trouve où login() est défini","autoindex + passage classé"),
+         ("Remember that prod runs PostgreSQL","stored in the node's memory index","Souviens-toi que la prod utilise PostgreSQL","stocké dans l'index mémoire du nœud"),
+         ("Map what's indexed on this node","per-index field map via xerj_map","Cartographie ce qui est indexé sur ce nœud","carte des champs par index via xerj_map")],
+     w_en="Retrieval and memory stay local: no per-query API cost, and the agent searches your real files instead of recalling approximations.",
+     w_fr="Recherche et mémoire restent en local : aucun coût API par requête, et l'agent fouille vos vrais fichiers au lieu de souvenirs approximatifs."),
 ]
 
 # i18n keys per server
@@ -439,7 +454,7 @@ ld_faq={"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
  {"@type":"Question","name":"Are MCP servers free?","acceptedAnswer":{"@type":"Answer","text":"Yes. All 12 servers in this catalog are free to use; remote servers authenticate via OAuth and local servers run through stdio (npx / CLI)."}},
  {"@type":"Question","name":"Which clients support MCP?","acceptedAnswer":{"@type":"Answer","text":"Devin, Cursor, Claude Desktop, VS Code, Codex and Claude Code. Each config file in the Catalogue-mcp repo is named after its target platform."}},
  {"@type":"Question","name":"How do I install an MCP server?","acceptedAnswer":{"@type":"Answer","text":"Copy the JSON/TOML block for your platform into its config file (e.g. mcp_config.json for Devin, .cursor/mcp.json for Cursor), restart the client, then complete OAuth if the server requires it."}}]}
-idx=head("idx","Catalogue-mcp · MCP Servers Explained — catalog, examples, ratings","Explained catalog of 12 Model Context Protocol servers: what they do, example requests, ratings, and ready configs for Devin, Cursor, Claude, VS Code, Codex.",BASE+"/",f'<script type="application/ld+json">{json.dumps(ld_idx,ensure_ascii=False)}</script><script type="application/ld+json">{json.dumps(ld_list,ensure_ascii=False)}</script><script type="application/ld+json">{json.dumps(ld_faq,ensure_ascii=False)}</script>',title_fr="Catalogue-mcp · Les serveurs MCP expliqués — catalogue, exemples, notes",desc_fr="Catalogue expliqué de 12 serveurs Model Context Protocol : rôle, exemples de demandes, notes et configs prêtes pour Devin, Cursor, Claude, VS Code, Codex.")
+idx=head("idx","Catalogue-mcp · MCP Servers Explained — catalog, examples, ratings","Explained catalog of 13 Model Context Protocol servers: what they do, example requests, ratings, and ready configs for Devin, Cursor, Claude, VS Code, Codex.",BASE+"/",f'<script type="application/ld+json">{json.dumps(ld_idx,ensure_ascii=False)}</script><script type="application/ld+json">{json.dumps(ld_list,ensure_ascii=False)}</script><script type="application/ld+json">{json.dumps(ld_faq,ensure_ascii=False)}</script>',title_fr="Catalogue-mcp · Les serveurs MCP expliqués — catalogue, exemples, notes",desc_fr="Catalogue expliqué de 13 serveurs Model Context Protocol : rôle, exemples de demandes, notes et configs prêtes pour Devin, Cursor, Claude, VS Code, Codex.")
 idx+=f"""<section class="hero"><div class="container hero-inner">
 <img src="{BASE}/logo.svg" alt="Catalogue-mcp" width="88" height="88" style="margin-bottom:1.2rem;filter:drop-shadow(0 8px 24px rgba(56,189,248,.35))">
 <h1 data-i18n="idx_hero">Model Context Protocol, in practice</h1>
@@ -480,7 +495,7 @@ for s in sorted(S,key=lambda x:(x["cat_en"],x["name"])):
 cats={}
 for s in S: cats.setdefault(s["cat_en"],[]).append(s)
 catlist="".join(f"<li><b>{c}</b> : "+", ".join(f'<a href="{BASE}/serveurs/{s["slug"]}.html">{s["name"]}</a>' for s in v)+"</li>" for c,v in sorted(cats.items()))
-srv=head("srv","All MCP servers — full catalog | Catalogue-mcp","Full catalog of 12 MCP servers: Trello, GitHub, Playwright, Semgrep, Context7, DeepWiki, Memory… role, auth, score, config.",BASE+"/serveurs.html",title_fr="Tous les serveurs MCP — catalogue complet | Catalogue-mcp",desc_fr="Catalogue complet de 12 serveurs MCP : Trello, GitHub, Playwright, Semgrep, Context7, DeepWiki, Memory… rôle, auth, note, config.")
+srv=head("srv","All MCP servers — full catalog | Catalogue-mcp","Full catalog of 13 MCP servers: Trello, GitHub, Playwright, Semgrep, Context7, DeepWiki, Memory… role, auth, score, config.",BASE+"/serveurs.html",title_fr="Tous les serveurs MCP — catalogue complet | Catalogue-mcp",desc_fr="Catalogue complet de 13 serveurs MCP : Trello, GitHub, Playwright, Semgrep, Context7, DeepWiki, Memory… rôle, auth, note, config.")
 srv+=f"""<div class="container page-section"><h1 data-i18n="srv_h1"></h1>
 <p class="section-desc" data-i18n="srv_intro"></p>
 <div class="table-wrap"><table><tr><th data-i18n="server">Server</th><th data-i18n="cat">Category</th>
@@ -500,7 +515,7 @@ crows="".join(f"""<tr><td><a href="{BASE}/serveurs/{s['slug']}.html">{s['name']}
 <td><span style="color:#ffd700">{stars(s['score'])}</span> {s['score']}/5</td>
 <td>{difftag(s)}</td><td data-i18n="s_{s['slug'].replace('-','_')}_cout">{s['cout_en']}</td>
 <td data-i18n="s_{s['slug'].replace('-','_')}_auth">{s['auth_en']}</td></tr>""" for s in sorted(S,key=lambda x:-x['score']))
-cmp=head("cmp","MCP servers comparison — ratings, difficulty, cost | Catalogue-mcp","Rated comparison of 12 MCP servers: usefulness, install difficulty, cost, authentication. Which server to install first?",BASE+"/comparatif.html",title_fr="Comparatif des serveurs MCP — notes, difficulté, coût | Catalogue-mcp",desc_fr="Comparatif noté de 12 serveurs MCP : utilité, difficulté d'installation, coût, authentification. Quel serveur installer en premier ?")
+cmp=head("cmp","MCP servers comparison — ratings, difficulty, cost | Catalogue-mcp","Rated comparison of 13 MCP servers: usefulness, install difficulty, cost, authentication. Which server to install first?",BASE+"/comparatif.html",title_fr="Comparatif des serveurs MCP — notes, difficulté, coût | Catalogue-mcp",desc_fr="Comparatif noté de 13 serveurs MCP : utilité, difficulté d'installation, coût, authentification. Quel serveur installer en premier ?")
 cmp+=f"""<div class="container page-section"><h1 data-i18n="cmp_h1"></h1>
 <p class="section-desc" data-i18n="cmp_intro" data-i18n-html="1"></p>
 <div class="table-wrap"><table><tr><th data-i18n="server">Server</th><th data-i18n="score">Score</th>
@@ -694,7 +709,7 @@ for bot in ["GPTBot","ClaudeBot","PerplexityBot","Google-Extended","CCBot","anth
 robots+=f"Sitemap: {BASE}/sitemap.xml\n"
 write("robots.txt",robots)
 
-llms="# Catalogue-mcp\n\n> Bilingual (EN/FR) catalog explaining the 12 Model Context Protocol servers we use: what each does, example requests, difficulty, ratings, and ready-to-use config files for Devin, Cursor, Claude Desktop, VS Code and Codex. All servers are free.\n\n## Servers\n\n"
+llms="# Catalogue-mcp\n\n> Bilingual (EN/FR) catalog explaining the 13 Model Context Protocol servers we use: what each does, example requests, difficulty, ratings, and ready-to-use config files for Devin, Cursor, Claude Desktop, VS Code and Codex. All servers are free.\n\n## Servers\n\n"
 llms+="\n".join(f"- [{s['name']}]({BASE}/serveurs/{s['slug']}.html): {s['r_en']}" for s in S)
 llms+=f"\n\n## Site\n\n- [Home]({BASE}/): what MCP is and why it matters\n- [Catalog]({BASE}/serveurs.html): all 12 servers\n- [Comparison]({BASE}/comparatif.html): ratings, difficulty, where to start\n- [Guide]({BASE}/guide.html): remote vs stdio, per-platform config, pitfalls\n- Config repo: {REPO}\n"
 write("llms.txt",llms)
@@ -724,7 +739,7 @@ def make_og(path):
     f_big=ImageFont.load_default(64) if ImageFont else None
     f_sm=ImageFont.load_default(32) if ImageFont else None
     d.text((60,H//2-90),"Catalogue-mcp",fill=(240,240,245),font=f_big)
-    d.text((60,H//2+10),"12 MCP servers explained — configs, examples, ratings",
+    d.text((60,H//2+10),"13 MCP servers explained — configs, examples, ratings",
            fill=(160,160,175),font=f_sm)
     d.text((60,H//2+60),"fjjjuv.github.io/Catalogue-mcp",fill=(88,166,255),font=f_sm)
     img.save(path,"PNG")
@@ -767,7 +782,7 @@ def make_screenshot(path, w, h):
     d.text((56,18),"Catalogue-mcp",fill=(240,240,245),font=f_h)
     d.text((60,h//2-70),"Model Context Protocol, in practice",
            fill=(240,240,245),font=f_t)
-    d.text((60,h//2+10),"12 MCP servers explained: what they do, "
+    d.text((60,h//2+10),"13 MCP servers explained: what they do, "
            "example requests, ratings, ready configs.",
            fill=(160,160,175),font=f_s)
     cols=min(4,w//320)
@@ -787,7 +802,7 @@ manifest={
  "id":BASE+"/",
  "name":"Catalogue-mcp — MCP Servers Explained",
  "short_name":"Catalogue-mcp",
- "description":"Explained catalog of 12 Model Context Protocol servers: configs, examples, ratings.",
+ "description":"Explained catalog of 13 Model Context Protocol servers: configs, examples, ratings.",
  "start_url":BASE+"/",
  "scope":BASE+"/",
  "display":"standalone",
@@ -801,7 +816,7 @@ manifest={
  ],
  "screenshots":[
   {"src":BASE+"/screenshot-wide.png","sizes":"1280x720","type":"image/png",
-   "form_factor":"wide","label":"Catalogue-mcp — catalog of 12 MCP servers"},
+   "form_factor":"wide","label":"Catalogue-mcp — catalog of 13 MCP servers"},
   {"src":BASE+"/screenshot-mobile.png","sizes":"540x960","type":"image/png",
    "label":"Catalogue-mcp on mobile"},
  ],
