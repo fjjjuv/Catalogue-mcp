@@ -1,6 +1,6 @@
 # Catalogue-mcp
 
-> Bilingual (EN/FR) catalog explaining the 12 Model Context Protocol servers we use: what each does, example requests, difficulty, ratings, and ready-to-use config files for Devin, Cursor, Claude Desktop, VS Code and Codex. All servers are free.
+> Bilingual (EN/FR) catalog explaining the 13 Model Context Protocol servers we use: what each does, example requests, difficulty, ratings, and ready-to-use config files for Devin, Cursor, Claude Desktop, VS Code and Codex. All servers are free.
 
 ## Servers
 
@@ -16,6 +16,7 @@
 - [Exa Code](https://fjjjuv.github.io/Catalogue-mcp/serveurs/exa-code.html): Code-oriented semantic web search: finds relevant examples, libraries and docs beyond keywords.
 - [Cloudflare Docs](https://fjjjuv.github.io/Catalogue-mcp/serveurs/cloudflare-docs.html): Direct access to official Cloudflare docs: Workers, Pages, R2, DNS, security.
 - [Computer Use](https://fjjjuv.github.io/Catalogue-mcp/serveurs/computer-use.html): Real desktop control: mouse, keyboard, screenshots — the agent operates the machine like a user.
+- [XERJ](https://fjjjuv.github.io/Catalogue-mcp/serveurs/xerj.html): Rust search engine (ES-compatible) with the MCP server inside the binary: autoindex turns any folder into queryable indices, plus durable agent memory.
 
 ## Site
 
