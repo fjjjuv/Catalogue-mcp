@@ -300,6 +300,7 @@ def head(page,title_en,desc_en,url,extra="",title_fr=None,desc_fr=None):
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="{BASE}/logo.svg">
 <link rel="apple-touch-icon" href="{BASE}/logo.png">
+<link rel="manifest" href="{BASE}/site.webmanifest">
 <link rel="stylesheet" href="{BASE}/style.css">
 {extra}
 </head>
@@ -738,4 +739,30 @@ def make_icon(path):
 
 make_og(os.path.join(OUT,"og-image.png"))
 make_icon(os.path.join(OUT,"logo.png"))
+
+def make_icon512(path):
+    img=Image.new("RGB",(512,512),(12,12,16))
+    d=ImageDraw.Draw(img)
+    d.rectangle([28,28,483,483],outline=(88,166,255),width=16)
+    f=ImageFont.load_default(200) if ImageFont else None
+    d.text((148,136),"M",fill=(240,240,245),font=f)
+    img.save(path,"PNG")
+
+make_icon512(os.path.join(OUT,"icon-512.png"))
+
+manifest={
+ "name":"Catalogue-mcp — MCP Servers Explained",
+ "short_name":"Catalogue-mcp",
+ "description":"Explained catalog of 12 Model Context Protocol servers: configs, examples, ratings.",
+ "start_url":BASE+"/",
+ "scope":BASE+"/",
+ "display":"standalone",
+ "background_color":"#0c0c10",
+ "theme_color":"#0c0c10",
+ "icons":[
+  {"src":BASE+"/logo.png","sizes":"180x180","type":"image/png"},
+  {"src":BASE+"/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"},
+ ],
+}
+write("site.webmanifest",json.dumps(manifest,ensure_ascii=False,indent=2))
 print("OK — fichiers:",sum(len(f) for _,_,f in os.walk(OUT)))
