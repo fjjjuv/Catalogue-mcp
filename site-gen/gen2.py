@@ -740,28 +740,70 @@ def make_icon(path):
 make_og(os.path.join(OUT,"og-image.png"))
 make_icon(os.path.join(OUT,"logo.png"))
 
-def make_icon512(path):
+def make_icon512(path, maskable=False):
     img=Image.new("RGB",(512,512),(12,12,16))
     d=ImageDraw.Draw(img)
-    d.rectangle([28,28,483,483],outline=(88,166,255),width=16)
-    f=ImageFont.load_default(200) if ImageFont else None
-    d.text((148,136),"M",fill=(240,240,245),font=f)
+    if maskable:
+        d.rectangle([86,86,425,425],outline=(88,166,255),width=12)
+        f=ImageFont.load_default(140) if ImageFont else None
+        d.text((200,170),"M",fill=(240,240,245),font=f)
+    else:
+        d.rectangle([28,28,483,483],outline=(88,166,255),width=16)
+        f=ImageFont.load_default(200) if ImageFont else None
+        d.text((148,136),"M",fill=(240,240,245),font=f)
     img.save(path,"PNG")
 
 make_icon512(os.path.join(OUT,"icon-512.png"))
+make_icon512(os.path.join(OUT,"icon-512-maskable.png"), maskable=True)
+
+def make_screenshot(path, w, h):
+    img=Image.new("RGB",(w,h),(12,12,16))
+    d=ImageDraw.Draw(img)
+    d.rectangle([0,0,w,64],fill=(20,20,28))
+    d.ellipse([20,22,40,42],fill=(88,166,255))
+    f_h=ImageFont.load_default(24) if ImageFont else None
+    f_t=ImageFont.load_default(48) if ImageFont else None
+    f_s=ImageFont.load_default(20) if ImageFont else None
+    d.text((56,18),"Catalogue-mcp",fill=(240,240,245),font=f_h)
+    d.text((60,h//2-70),"Model Context Protocol, in practice",
+           fill=(240,240,245),font=f_t)
+    d.text((60,h//2+10),"12 MCP servers explained: what they do, "
+           "example requests, ratings, ready configs.",
+           fill=(160,160,175),font=f_s)
+    cols=min(4,w//320)
+    cardw=(w-60-(cols-1)*20)//cols
+    for i in range(cols):
+        x=60+i*(cardw+20)
+        d.rectangle([x,h-220,x+cardw,h-80],outline=(60,60,75),width=2)
+        d.rectangle([x+16,h-190,x+cardw-16,h-170],fill=(40,40,52))
+        d.rectangle([x+16,h-155,x+cardw-60,h-140],fill=(30,30,40))
+        d.rectangle([x+16,h-125,x+cardw-90,h-110],fill=(30,30,40))
+    img.save(path,"PNG")
+
+make_screenshot(os.path.join(OUT,"screenshot-wide.png"),1280,720)
+make_screenshot(os.path.join(OUT,"screenshot-mobile.png"),540,960)
 
 manifest={
+ "id":BASE+"/",
  "name":"Catalogue-mcp — MCP Servers Explained",
  "short_name":"Catalogue-mcp",
  "description":"Explained catalog of 12 Model Context Protocol servers: configs, examples, ratings.",
  "start_url":BASE+"/",
  "scope":BASE+"/",
  "display":"standalone",
+ "display_override":["window-controls-overlay","standalone"],
  "background_color":"#0c0c10",
  "theme_color":"#0c0c10",
  "icons":[
   {"src":BASE+"/logo.png","sizes":"180x180","type":"image/png"},
-  {"src":BASE+"/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"},
+  {"src":BASE+"/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+  {"src":BASE+"/icon-512-maskable.png","sizes":"512x512","type":"image/png","purpose":"maskable"},
+ ],
+ "screenshots":[
+  {"src":BASE+"/screenshot-wide.png","sizes":"1280x720","type":"image/png",
+   "form_factor":"wide","label":"Catalogue-mcp — catalog of 12 MCP servers"},
+  {"src":BASE+"/screenshot-mobile.png","sizes":"540x960","type":"image/png",
+   "label":"Catalogue-mcp on mobile"},
  ],
 }
 write("site.webmanifest",json.dumps(manifest,ensure_ascii=False,indent=2))
