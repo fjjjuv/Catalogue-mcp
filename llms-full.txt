@@ -144,3 +144,15 @@ Real desktop control: mouse, keyboard, screenshots — the agent operates the ma
 - Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/computer-use.html
 - Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/computer-use/
 
+## XERJ
+
+Rust search engine (ES-compatible) with the MCP server inside the binary: autoindex turns any folder into queryable indices, plus durable agent memory.
+
+- Type: local stdio + local node
+- Endpoint/command: xerj mcp (built into the engine binary)
+- Auth: none (--insecure) or ApiKey
+- Cost: Free
+- Score: 4.6/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/xerj.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/xerj/
+
