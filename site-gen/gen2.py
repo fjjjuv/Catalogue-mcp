@@ -283,22 +283,23 @@ def head(page,title_en,desc_en,url,extra="",title_fr=None,desc_fr=None):
 <meta name="author" content="fjjjuv">
 <meta name="generator" content="Catalogue-mcp">
 <meta property="og:site_name" content="Catalogue-mcp">
-<meta property="og:image" content="{BASE}/logo.svg">
+<meta property="og:image" content="{BASE}/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="fr_FR">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{html.escape(title_en)}">
 <meta name="twitter:description" content="{html.escape(desc_en)}">
-<meta name="twitter:image" content="{BASE}/logo.svg">
+<meta name="twitter:image" content="{BASE}/og-image.png">
 <link rel="alternate" hreflang="en" href="{url}">
-<link rel="alternate" hreflang="fr" href="{url}">
 <link rel="alternate" hreflang="x-default" href="{url}">
 <link rel="alternate" type="text/plain" title="LLMs" href="{BASE}/llms.txt">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="{BASE}/logo.svg">
-<link rel="apple-touch-icon" href="{BASE}/logo.svg">
+<link rel="apple-touch-icon" href="{BASE}/logo.png">
 <link rel="stylesheet" href="{BASE}/style.css">
 {extra}
 </head>
@@ -701,7 +702,40 @@ for s in S:
     full+=f"## {s['name']}\n\n{s['r_en']}\n\n- Type: {s['typ_en']}\n- Endpoint/command: {s['url']}\n- Auth: {s['auth_en']}\n- Cost: {s['cout_en']}\n- Score: {s['score']}/5\n- Page: {BASE}/serveurs/{s['slug']}.html\n- Config folder: {REPO}/tree/main/{s['slug']}/\n\n"
 write("llms-full.txt",full)
 urls=["/","/serveurs.html","/comparatif.html","/guide.html"]+[f"/serveurs/{s['slug']}.html" for s in S]
+import datetime
+today=datetime.date.today().isoformat()
 sm='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-sm+="".join(f"  <url><loc>{BASE}{u}</loc></url>\n" for u in urls)+"</urlset>\n"
+sm+="".join(f"  <url><loc>{BASE}{u}</loc><lastmod>{today}</lastmod></url>\n" for u in urls)+"</urlset>\n"
 write("sitemap.xml",sm)
+
+# ============ og-image + apple-touch-icon (PNG) ============================
+from PIL import Image, ImageDraw
+try:
+    from PIL import ImageFont
+except ImportError:
+    ImageFont=None
+
+def make_og(path):
+    W,H=1200,630
+    img=Image.new("RGB",(W,H),(12,12,16))
+    d=ImageDraw.Draw(img)
+    d.rectangle([0,H-12,W,H],fill=(88,166,255))
+    f_big=ImageFont.load_default(64) if ImageFont else None
+    f_sm=ImageFont.load_default(32) if ImageFont else None
+    d.text((60,H//2-90),"Catalogue-mcp",fill=(240,240,245),font=f_big)
+    d.text((60,H//2+10),"12 MCP servers explained — configs, examples, ratings",
+           fill=(160,160,175),font=f_sm)
+    d.text((60,H//2+60),"fjjjuv.github.io/Catalogue-mcp",fill=(88,166,255),font=f_sm)
+    img.save(path,"PNG")
+
+def make_icon(path):
+    img=Image.new("RGB",(180,180),(12,12,16))
+    d=ImageDraw.Draw(img)
+    d.rectangle([10,10,169,169],outline=(88,166,255),width=6)
+    f=ImageFont.load_default(72) if ImageFont else None
+    d.text((52,48),"M",fill=(240,240,245),font=f)
+    img.save(path,"PNG")
+
+make_og(os.path.join(OUT,"og-image.png"))
+make_icon(os.path.join(OUT,"logo.png"))
 print("OK — fichiers:",sum(len(f) for _,_,f in os.walk(OUT)))
