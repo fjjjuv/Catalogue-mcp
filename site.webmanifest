@@ -1,0 +1,23 @@
+{
+  "name": "Catalogue-mcp — MCP Servers Explained",
+  "short_name": "Catalogue-mcp",
+  "description": "Explained catalog of 12 Model Context Protocol servers: configs, examples, ratings.",
+  "start_url": "https://fjjjuv.github.io/Catalogue-mcp/",
+  "scope": "https://fjjjuv.github.io/Catalogue-mcp/",
+  "display": "standalone",
+  "background_color": "#0c0c10",
+  "theme_color": "#0c0c10",
+  "icons": [
+    {
+      "src": "https://fjjjuv.github.io/Catalogue-mcp/logo.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "https://fjjjuv.github.io/Catalogue-mcp/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
