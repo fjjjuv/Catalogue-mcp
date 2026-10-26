@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catalogue MCP — 12 serveurs Model Context Protocol expliqués et configurés | mcp-configs</title>
+<meta name="description" content="Catalogue de serveurs MCP : ce qu&#x27;ils font, à quoi ils servent, exemples, notes, et fichiers de config prêts pour Devin, Cursor, Claude Desktop, VS Code et Codex.">
+<link rel="canonical" href="https://fjjjuv.github.io/catalogue-mcp/">
+<meta property="og:title" content="Catalogue MCP — 12 serveurs Model Context Protocol expliqués et configurés | mcp-configs">
+<meta property="og:description" content="Catalogue de serveurs MCP : ce qu&#x27;ils font, à quoi ils servent, exemples, notes, et fichiers de config prêts pour Devin, Cursor, Claude Desktop, VS Code et Codex.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fjjjuv.github.io/catalogue-mcp/">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="https://fjjjuv.github.io/catalogue-mcp/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "TechArticle", "headline": "Catalogue de serveurs MCP (Model Context Protocol)", "description": "Un dossier par serveur MCP : configs prêtes pour Devin, Cursor, Claude, VS Code, Codex + explications et notes.", "author": {"@type": "Person", "name": "fjjjuv"}, "about": {"@type": "Thing", "name": "Model Context Protocol"}}</script>
+</head>
+<body>
+<header><a href="https://fjjjuv.github.io/catalogue-mcp/" style="color:var(--txt);font-weight:700">🧩 mcp-configs</a>
+<nav>
+<a href="https://fjjjuv.github.io/catalogue-mcp/">Accueil</a>
+<a href="https://fjjjuv.github.io/catalogue-mcp/serveurs.html">Serveurs</a>
+<a href="https://fjjjuv.github.io/catalogue-mcp/comparatif.html">Comparatif</a>
+<a href="https://fjjjuv.github.io/catalogue-mcp/guide.html">Guide</a>
+<a href="https://github.com/fjjjuv/mcp-configs">GitHub ↗</a>
+</nav></header>
+<div class="hero">
+<h1>🧩 Model Context Protocol, en pratique</h1>
+<p>Les MCP sont des <b>serveurs de capacités</b> qu'on branche à un agent IA. Une fois configuré, l'agent peut agir : lire vos boards Trello, pousser sur GitHub, piloter le navigateur, scanner la sécurité de votre code…</p>
+<p style="margin-top:14px"><a class="badge" href="https://fjjjuv.github.io/catalogue-mcp/serveurs.html" style="font-size:1em;padding:8px 18px">Voir les 13 serveurs →</a></p>
+</div>
+<div class="wrap">
+<h2>C'est quoi un MCP ?</h2>
+<p>Le <b>Model Context Protocol</b> est un standard ouvert (Anthropic, 2024) qui permet à un agent IA de
+dialoguer avec des outils externes via une interface unifiée. Au lieu de coder une intégration par outil et par
+IA, on configure un serveur MCP une fois — et il marche avec Devin, Cursor, Claude Desktop, VS Code, Codex…</p>
+<p>Deux modes de transport : <b>remote</b> (URL HTTPS, souvent OAuth) ou <b>local stdio</b> (une commande comme
+<code>npx</code> lancée par le client). Notre dépôt fournit un dossier par serveur avec la config adaptée à chaque plateforme.</p>
+<h2>Les 13 serveurs de notre setup</h2>
+<div class="grid"><div class="card"><span class="cat">Gestion de projet</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/trello.html" style="color:var(--txt)">Trello</a> <span class="badge">officiel</span></h3>
+<p>Le serveur MCP officiel d&#x27;Atlassian pour Trello : l&#x27;agent lit et écrit vos boards, listes, cartes, checklists et commentaires.</p>
+<p><span class="stars">★★★★⯨</span> <b>4.8/5</b> · <span class="tag">remote (HTTPS)</span></p></div><div class="card"><span class="cat">Gestion de projet</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/asana.html" style="color:var(--txt)">Asana</a> <span class="badge">officiel</span></h3>
+<p>Le MCP officiel Asana : accès aux projets, tâches, sections et commentaires du workspace.</p>
+<p><span class="stars">★★★★⯨</span> <b>4.5/5</b> · <span class="tag">remote (HTTPS)</span></p></div><div class="card"><span class="cat">Développement</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/github.html" style="color:var(--txt)">GitHub MCP Server</a> <span class="badge">officiel</span></h3>
+<p>Le serveur officiel de GitHub (46 outils) : lecture et écriture sur les repos — fichiers, commits, branches, issues, PR, releases, recherche de code.</p>
+<p><span class="stars">★★★★★</span> <b>5.0/5</b> · <span class="tag">remote (HTTPS)</span></p></div><div class="card"><span class="cat">Documentation</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/context7.html" style="color:var(--txt)">Context7</a> </h3>
+<p>Injecte dans le contexte la documentation à jour des bibliothèques — versions réelles, exemples officiels.</p>
+<p><span class="stars">★★★★⯨</span> <b>4.7/5</b> · <span class="tag">local stdio (npx)</span></p></div><div class="card"><span class="cat">Recherche</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/exa-code.html" style="color:var(--txt)">Exa Code</a> </h3>
+<p>Recherche web sémantique orientée code : trouve des exemples, libs et docs pertinents au-delà des mots-clés.</p>
+<p><span class="stars">★★★★☆</span> <b>4.2/5</b> · <span class="tag">remote (HTTPS)</span></p></div><div class="card"><span class="cat">Documentation</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/deepwiki.html" style="color:var(--txt)">DeepWiki</a> </h3>
+<p>Documentation IA des dépôts GitHub : structure wiki générée, explications d&#x27;architecture, questions-réponses sur un codebase.</p>
+<p><span class="stars">★★★★⯨</span> <b>4.6/5</b> · <span class="tag">remote (HTTPS)</span></p></div><div class="card"><span class="cat">Documentation</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/cloudflare-docs.html" style="color:var(--txt)">Cloudflare Docs</a> <span class="badge">officiel</span></h3>
+<p>Accès direct à la documentation officielle Cloudflare : Workers, Pages, R2, DNS, sécurité.</p>
+<p><span class="stars">★★★★☆</span> <b>4.0/5</b> · <span class="tag">remote (HTTPS)</span></p></div><div class="card"><span class="cat">Navigateur</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/playwright.html" style="color:var(--txt)">Playwright</a> <span class="badge">officiel</span></h3>
+<p>Automatisation navigateur complète : l&#x27;agent navigue, clique, remplit, extrait et photographie des pages web.</p>
+<p><span class="stars">★★★★⯨</span> <b>4.9/5</b> · <span class="tag">local stdio (npx)</span></p></div><div class="card"><span class="cat">Navigateur</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/puppeteer.html" style="color:var(--txt)">Puppeteer</a> <span class="badge">officiel</span></h3>
+<p>Automatisation Chrome via le protocole DevTools : navigation, screenshots, exécution JavaScript dans la page.</p>
+<p><span class="stars">★★★★☆</span> <b>4.3/5</b> · <span class="tag">local stdio (npx)</span></p></div><div class="card"><span class="cat">Automatisation</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/computer-use.html" style="color:var(--txt)">Computer Use</a> </h3>
+<p>Contrôle réel du poste : souris, clavier, captures d&#x27;écran — l&#x27;agent opère le bureau comme un utilisateur.</p>
+<p><span class="stars">★★★⯨☆</span> <b>3.8/5</b> · <span class="tag">local stdio (npx)</span></p></div><div class="card"><span class="cat">Persistance</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/memory.html" style="color:var(--txt)">Memory</a> <span class="badge">officiel</span></h3>
+<p>Graphe de connaissances persistant : l&#x27;agent mémorise des faits, préférences et relations entre les sessions.</p>
+<p><span class="stars">★★★★☆</span> <b>4.4/5</b> · <span class="tag">local stdio (npx)</span></p></div><div class="card"><span class="cat">Sécurité</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/semgrep.html" style="color:var(--txt)">Semgrep</a> </h3>
+<p>Analyse statique de sécurité transformée en MCP : on a bricolé la CLI `semgrep mcp` pour en faire un serveur.</p>
+<p><span class="stars">★★★★⯨</span> <b>4.5/5</b> · <span class="tag">local stdio</span></p></div><div class="card"><span class="cat">Sécurité</span>
+<h3><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs/zap.html" style="color:var(--txt)">OWASP ZAP</a> <span class="badge">officiel</span></h3>
+<p>L&#x27;add-on officiel « MCP Integration » de ZAP 2.17+ : l&#x27;IA pilote le scanner de sécurité en langage naturel.</p>
+<p><span class="stars">★★★★☆</span> <b>4.3/5</b> · <span class="tag">local HTTP (localhost:8282)</span></p></div></div>
+<h2>Pourquoi ça change la vie</h2>
+<ul>
+<li><b>Zéro copier-coller</b> : l'agent lit/écrit directement dans vos outils (Trello, GitHub…)</li>
+<li><b>Vérité terrain</b> : Context7 et DeepWiki injectent la vraie doc — fini les réponses sur des versions obsolètes</li>
+<li><b>Sécurité continue</b> : Semgrep scanne pendant que l'agent écrit</li>
+<li><b>Actions réelles</b> : Playwright navigue pour de vrai, Computer Use clique sur votre bureau</li>
+<li><b>Mémoire</b> : le serveur Memory fait survivre vos préférences entre les sessions</li>
+</ul>
+</div>
+<footer>Déployé via GitHub Pages depuis la branche <code>gh-pages</code> ·
+<a href="https://github.com/fjjjuv/mcp-configs">dépôt mcp-configs</a> · config MCP — Model Context Protocol</footer>
+</body></html>

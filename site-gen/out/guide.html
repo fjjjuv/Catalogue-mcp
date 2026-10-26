@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide — c&#x27;est quoi le MCP et comment installer un serveur | mcp-configs</title>
+<meta name="description" content="Comprendre le Model Context Protocol : fonctionnement, remote vs stdio, et comment installer un serveur MCP sur Devin, Cursor, Claude Desktop, VS Code et Codex.">
+<link rel="canonical" href="https://fjjjuv.github.io/catalogue-mcp/guide.html">
+<meta property="og:title" content="Guide — c&#x27;est quoi le MCP et comment installer un serveur | mcp-configs">
+<meta property="og:description" content="Comprendre le Model Context Protocol : fonctionnement, remote vs stdio, et comment installer un serveur MCP sur Devin, Cursor, Claude Desktop, VS Code et Codex.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fjjjuv.github.io/catalogue-mcp/guide.html">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="https://fjjjuv.github.io/catalogue-mcp/style.css">
+
+</head>
+<body>
+<header><a href="https://fjjjuv.github.io/catalogue-mcp/" style="color:var(--txt);font-weight:700">🧩 mcp-configs</a>
+<nav>
+<a href="https://fjjjuv.github.io/catalogue-mcp/">Accueil</a>
+<a href="https://fjjjuv.github.io/catalogue-mcp/serveurs.html">Serveurs</a>
+<a href="https://fjjjuv.github.io/catalogue-mcp/comparatif.html">Comparatif</a>
+<a href="https://fjjjuv.github.io/catalogue-mcp/guide.html">Guide</a>
+<a href="https://github.com/fjjjuv/mcp-configs">GitHub ↗</a>
+</nav></header>
+<div class="wrap"><h1>Guide : comprendre et installer un MCP</h1>
+<h2>Le principe</h2>
+<p>Un <b>serveur MCP</b> expose des <i>outils</i> (functions) que l'agent IA peut appeler : <code>list_boards</code>,
+<code>create_file</code>, <code>browser_navigate</code>… Le client IA (Devin, Claude, Cursor…) lance le serveur au
+démarrage et découvre ses outils automatiquement.</p>
+<h2>Remote vs local</h2>
+<table><tr><th></th><th>Remote (HTTPS)</th><th>Local (stdio)</th></tr>
+<tr><td>Lancement</td><td>déjà hébergé, juste une URL</td><td>commande <code>npx</code>/binaire exécutée par le client</td></tr>
+<tr><td>Auth</td><td>souvent OAuth (navigateur) ou clé API</td><td>généralement aucune — tourne sur votre machine</td></tr>
+<tr><td>Exemples</td><td>Trello, GitHub, DeepWiki, Exa</td><td>Playwright, Memory, Semgrep, Context7</td></tr></table>
+<h2>Installer sur Devin</h2>
+<p>Fusionner dans <code>%APPDATA%\devin\mcp_config.json</code> sous <code>mcpServers</code> :</p>
+<pre>{
+  "mcpServers": {
+    "trello": { "url": "https://mcp.trello.com/v1", "transport": "http" },
+    "memory": { "command": "npx", "args": ["-y", "@modelcontextprotocol/server-memory"] }
+  }
+}</pre>
+<p>Redémarrer Devin → le serveur apparaît dans les MCP actifs. Sous Windows, préférer
+<code>"command": "cmd.exe", "args": ["/c", "npx", "-y", "..."]</code> quand <code>npx</code> n'est pas trouvé.</p>
+<h2>Les autres plateformes</h2>
+<table><tr><th>Plateforme</th><th>Fichier</th><th>Clé racine</th></tr>
+<tr><td>Cursor</td><td><code>.cursor/mcp.json</code></td><td><code>mcpServers</code></td></tr>
+<tr><td>Claude Desktop</td><td><code>claude_desktop_config.json</code></td><td><code>mcpServers</code></td></tr>
+<tr><td>VS Code</td><td><code>.vscode/mcp.json</code></td><td><code>servers</code> + <code>type</code></td></tr>
+<tr><td>Codex</td><td><code>~/.codex/config.toml</code></td><td><code>[mcp_servers.*]</code></td></tr>
+<tr><td>Claude Code</td><td>via CLI</td><td><code>claude mcp add</code></td></tr></table>
+<h2>Pièges rencontrés (vrai vécu)</h2>
+<ul>
+<li><b>OAuth Trello</b> : le consentement générique échoue → il faut relancer avec les scopes explicites
+(<code>read:board:trello write:board:trello</code>…)</li>
+<li><b>Windows + npx</b> : l'app graphique ne trouve pas toujours <code>npx</code> dans le PATH →
+utiliser <code>cmd.exe /c npx</code> ou le chemin absolu de l'exécutable</li>
+<li><b>Serveur auto-désactivé</b> : un échec de démarrage ajoute <code>"disabled": true</code> à la config — vérifiez-la</li>
+<li><b>Chemin absolu requis parfois</b> : ex. Semgrep — <code>semgrep.exe</code> complet plutôt que <code>semgrep</code></li>
+</ul>
+<h2>Sécurité</h2>
+<ul>
+<li>Ne jamais commiter de token/secret dans les configs — utiliser des variables d'environnement</li>
+<li>Un MCP local tourne avec VOS droits : <code>computer-use</code> clique réellement, <code>semgrep</code> lit vos fichiers</li>
+<li>OAuth = jeton révocable : préférez-le aux clés en dur</li>
+</ul>
+</div>
+<footer>Déployé via GitHub Pages depuis la branche <code>gh-pages</code> ·
+<a href="https://github.com/fjjjuv/mcp-configs">dépôt mcp-configs</a> · config MCP — Model Context Protocol</footer>
+</body></html>
