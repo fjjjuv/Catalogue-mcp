@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semgrep — Serveur MCP : usages, config et exemples | mcp-configs</title>
+<meta name="description" content="Analyse statique de sécurité transformée en MCP : on a bricolé la CLI `semgrep mcp` pour en faire un serveur. Type : local stdio. Note : 4.5/5.">
+<link rel="canonical" href="https://fjjjuv.github.io/catalogue-mcp/serveurs/semgrep.html">
+<meta property="og:title" content="Semgrep — Serveur MCP : usages, config et exemples | mcp-configs">
+<meta property="og:description" content="Analyse statique de sécurité transformée en MCP : on a bricolé la CLI `semgrep mcp` pour en faire un serveur. Type : local stdio. Note : 4.5/5.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fjjjuv.github.io/catalogue-mcp/serveurs/semgrep.html">
+<meta name="robots" content="index,follow">
+<link rel="stylesheet" href="https://fjjjuv.github.io/catalogue-mcp/style.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Semgrep MCP Server", "applicationCategory": "DeveloperApplication", "description": "Analyse statique de sécurité transformée en MCP : on a bricolé la CLI `semgrep mcp` pour en faire un serveur.", "operatingSystem": "Windows, macOS, Linux", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.5", "bestRating": "5", "ratingCount": "1"}}</script>
+</head>
+<body>
+<header><a href="https://fjjjuv.github.io/catalogue-mcp/" style="color:var(--txt);font-weight:700">🧩 mcp-configs</a>
+<nav>
+<a href="https://fjjjuv.github.io/catalogue-mcp/">Accueil</a>
+<a href="https://fjjjuv.github.io/catalogue-mcp/serveurs.html">Serveurs</a>
+<a href="https://fjjjuv.github.io/catalogue-mcp/comparatif.html">Comparatif</a>
+<a href="https://fjjjuv.github.io/catalogue-mcp/guide.html">Guide</a>
+<a href="https://github.com/fjjjuv/mcp-configs">GitHub ↗</a>
+</nav></header>
+<div class="wrap">
+<p><a href="https://fjjjuv.github.io/catalogue-mcp/serveurs.html">← Tous les serveurs</a></p>
+<h1>Semgrep <span class="tag">community</span></h1>
+<p class="cat" style="color:var(--acc)">Sécurité</p>
+<p style="font-size:1.1em">Analyse statique de sécurité transformée en MCP : on a bricolé la CLI `semgrep mcp` pour en faire un serveur.</p>
+<table>
+<tr><th>Type</th><td><code>local stdio</code></td></tr>
+<tr><th>Endpoint / commande</th><td><code>semgrep mcp (CLI locale → serveur MCP)</code></td></tr>
+<tr><th>Authentification</th><td>aucune</td></tr>
+<tr><th>Coût</th><td>Gratuit</td></tr>
+<tr><th>Installation</th><td><span class="diff d5">très difficile</span></td></tr>
+<tr><th>Note</th><td><span class="stars">★★★★⯨</span> 4.5/5</td></tr>
+</table>
+<h2>Ce qu'il permet</h2><ul><li>Scanner du code pour vulnérabilités et secrets</li><li>Vérifier la qualité/sécurité à chaque édition (hooks)</li><li>Écrire des règles custom pour le projet</li><li>Audit supply-chain des dépendances</li></ul>
+<h2>Exemples de demandes</h2>
+<table><tr><th>Demande à l'agent</th><th>Résultat</th></tr><tr><td>« Scanne le projet pour des failles »</td><td>248 règles du registre auto</td></tr><tr><td>« Vérifie ce fichier que tu viens de modifier »</td><td>sécurité en continu</td></tr><tr><td>« Écris une règle pour interdire eval() »</td><td>règle custom générée</td></tr></table>
+<h2>En quoi il change la vie</h2>
+<p>La sécurité devient continue : l'agent détecte et corrige les failles pendant qu'il écrit le code, pas après.</p>
+<h2>Configuration</h2>
+<p>Les fichiers prêts à l'emploi pour Devin, Cursor, Claude Desktop, VS Code et Codex sont dans le dépôt :
+<a href="https://github.com/fjjjuv/mcp-configs/tree/main/semgrep/"><code>semgrep/</code> sur GitHub ↗</a></p>
+</div>
+<footer>Déployé via GitHub Pages depuis la branche <code>gh-pages</code> ·
+<a href="https://github.com/fjjjuv/mcp-configs">dépôt mcp-configs</a> · config MCP — Model Context Protocol</footer>
+</body></html>
