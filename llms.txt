@@ -11,6 +11,7 @@
 - [DeepWiki](https://fjjjuv.github.io/Catalogue-mcp/serveurs/deepwiki.html): AI-powered docs for GitHub repos: generated wiki structure, architecture explanations, Q&A on any codebase.
 - [Asana](https://fjjjuv.github.io/Catalogue-mcp/serveurs/asana.html): The official Asana MCP: access to projects, tasks, sections and comments across the workspace.
 - [Semgrep](https://fjjjuv.github.io/Catalogue-mcp/serveurs/semgrep.html): Static security analysis turned into an MCP: we hacked the `semgrep mcp` CLI command into a server.
+- [OWASP ZAP](https://fjjjuv.github.io/Catalogue-mcp/serveurs/zap.html): ZAP 2.17's official "MCP Integration" add-on: the AI drives the security scanner in natural language — spiders, active scans, alerts, reports.
 - [Memory](https://fjjjuv.github.io/Catalogue-mcp/serveurs/memory.html): Persistent knowledge graph: the agent remembers facts, preferences and relations across sessions.
 - [Puppeteer](https://fjjjuv.github.io/Catalogue-mcp/serveurs/puppeteer.html): Chrome automation via the DevTools protocol: navigation, screenshots, JavaScript execution in the page.
 - [Exa Code](https://fjjjuv.github.io/Catalogue-mcp/serveurs/exa-code.html): Code-oriented semantic web search: finds relevant examples, libraries and docs beyond keywords.

@@ -1,0 +1,170 @@
+# Catalogue-mcp — full reference
+
+## GitHub MCP Server
+
+GitHub's official server (46 tools): read and write on your repos — files, commits, branches, issues, PRs, releases, code search.
+
+- Type: remote (HTTPS)
+- Endpoint/command: https://api.githubcopilot.com/mcp
+- Auth: OAuth / PAT
+- Cost: Free
+- Score: 5.0/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/github.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/github/
+
+## Playwright
+
+Full browser automation: the agent navigates, clicks, fills, extracts and screenshots real web pages.
+
+- Type: local stdio (npx)
+- Endpoint/command: npx -y @playwright/mcp@latest
+- Auth: none
+- Cost: Free
+- Score: 4.9/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/playwright.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/playwright/
+
+## Trello
+
+Atlassian's official Trello server: the agent reads and writes your boards, lists, cards, checklists and comments.
+
+- Type: remote (HTTPS)
+- Endpoint/command: https://mcp.trello.com/v1
+- Auth: OAuth 2.0
+- Cost: Free
+- Score: 4.8/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/trello.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/trello/
+
+## Context7
+
+Injects up-to-date library documentation into context — real versions, official examples.
+
+- Type: local stdio (npx)
+- Endpoint/command: npx -y @upstash/context7-mcp@1.0.31
+- Auth: none (optional API key)
+- Cost: Free
+- Score: 4.7/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/context7.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/context7/
+
+## DeepWiki
+
+AI-powered docs for GitHub repos: generated wiki structure, architecture explanations, Q&A on any codebase.
+
+- Type: remote (HTTPS)
+- Endpoint/command: https://mcp.deepwiki.com/mcp
+- Auth: none
+- Cost: Free
+- Score: 4.6/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/deepwiki.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/deepwiki/
+
+## Asana
+
+The official Asana MCP: access to projects, tasks, sections and comments across the workspace.
+
+- Type: remote (HTTPS)
+- Endpoint/command: https://mcp.asana.com/v2/mcp
+- Auth: OAuth 2.0
+- Cost: Free
+- Score: 4.5/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/asana.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/asana/
+
+## Semgrep
+
+Static security analysis turned into an MCP: we hacked the `semgrep mcp` CLI command into a server.
+
+- Type: local stdio
+- Endpoint/command: semgrep mcp (local CLI → MCP server)
+- Auth: none (optional login)
+- Cost: Free
+- Score: 4.5/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/semgrep.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/semgrep/
+
+## OWASP ZAP
+
+ZAP 2.17's official "MCP Integration" add-on: the AI drives the security scanner in natural language — spiders, active scans, alerts, reports.
+
+- Type: local HTTP (localhost:8282)
+- Endpoint/command: http://localhost:8282
+- Auth: security key (Authorization header)
+- Cost: Free
+- Score: 4.3/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/zap.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/zap/
+
+## Memory
+
+Persistent knowledge graph: the agent remembers facts, preferences and relations across sessions.
+
+- Type: local stdio (npx)
+- Endpoint/command: npx -y @modelcontextprotocol/server-memory
+- Auth: none
+- Cost: Free
+- Score: 4.4/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/memory.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/memory/
+
+## Puppeteer
+
+Chrome automation via the DevTools protocol: navigation, screenshots, JavaScript execution in the page.
+
+- Type: local stdio (npx)
+- Endpoint/command: npx -y @modelcontextprotocol/server-puppeteer
+- Auth: none
+- Cost: Free
+- Score: 4.3/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/puppeteer.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/puppeteer/
+
+## Exa Code
+
+Code-oriented semantic web search: finds relevant examples, libraries and docs beyond keywords.
+
+- Type: remote (HTTPS)
+- Endpoint/command: https://mcp.exa.ai/mcp
+- Auth: Exa API key
+- Cost: Freemium
+- Score: 4.2/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/exa-code.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/exa-code/
+
+## Cloudflare Docs
+
+Direct access to official Cloudflare docs: Workers, Pages, R2, DNS, security.
+
+- Type: remote (HTTPS)
+- Endpoint/command: https://docs.mcp.cloudflare.com/mcp
+- Auth: none
+- Cost: Free
+- Score: 4.0/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/cloudflare-docs.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/cloudflare-docs/
+
+## Computer Use
+
+Real desktop control: mouse, keyboard, screenshots — the agent operates the machine like a user.
+
+- Type: local stdio (npx)
+- Endpoint/command: npx -y computer-use-mcp
+- Auth: none
+- Cost: Free
+- Score: 3.8/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/computer-use.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/computer-use/
+
+## XERJ
+
+Rust search engine (ES-compatible) with the MCP server inside the binary: autoindex turns any folder into queryable indices, plus durable agent memory.
+
+- Type: local stdio + local node
+- Endpoint/command: xerj mcp (built into the engine binary)
+- Auth: none (--insecure) or ApiKey
+- Cost: Free
+- Score: 4.6/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/xerj.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/xerj/
+

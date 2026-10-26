@@ -1,0 +1,28 @@
+# Catalogue-mcp
+
+> Bilingual (EN/FR) catalog explaining the 13 Model Context Protocol servers we use: what each does, example requests, difficulty, ratings, and ready-to-use config files for Devin, Cursor, Claude Desktop, VS Code and Codex. All servers are free.
+
+## Servers
+
+- [GitHub MCP Server](https://fjjjuv.github.io/Catalogue-mcp/serveurs/github.html): GitHub's official server (46 tools): read and write on your repos — files, commits, branches, issues, PRs, releases, code search.
+- [Playwright](https://fjjjuv.github.io/Catalogue-mcp/serveurs/playwright.html): Full browser automation: the agent navigates, clicks, fills, extracts and screenshots real web pages.
+- [Trello](https://fjjjuv.github.io/Catalogue-mcp/serveurs/trello.html): Atlassian's official Trello server: the agent reads and writes your boards, lists, cards, checklists and comments.
+- [Context7](https://fjjjuv.github.io/Catalogue-mcp/serveurs/context7.html): Injects up-to-date library documentation into context — real versions, official examples.
+- [DeepWiki](https://fjjjuv.github.io/Catalogue-mcp/serveurs/deepwiki.html): AI-powered docs for GitHub repos: generated wiki structure, architecture explanations, Q&A on any codebase.
+- [Asana](https://fjjjuv.github.io/Catalogue-mcp/serveurs/asana.html): The official Asana MCP: access to projects, tasks, sections and comments across the workspace.
+- [Semgrep](https://fjjjuv.github.io/Catalogue-mcp/serveurs/semgrep.html): Static security analysis turned into an MCP: we hacked the `semgrep mcp` CLI command into a server.
+- [OWASP ZAP](https://fjjjuv.github.io/Catalogue-mcp/serveurs/zap.html): ZAP 2.17's official "MCP Integration" add-on: the AI drives the security scanner in natural language — spiders, active scans, alerts, reports.
+- [Memory](https://fjjjuv.github.io/Catalogue-mcp/serveurs/memory.html): Persistent knowledge graph: the agent remembers facts, preferences and relations across sessions.
+- [Puppeteer](https://fjjjuv.github.io/Catalogue-mcp/serveurs/puppeteer.html): Chrome automation via the DevTools protocol: navigation, screenshots, JavaScript execution in the page.
+- [Exa Code](https://fjjjuv.github.io/Catalogue-mcp/serveurs/exa-code.html): Code-oriented semantic web search: finds relevant examples, libraries and docs beyond keywords.
+- [Cloudflare Docs](https://fjjjuv.github.io/Catalogue-mcp/serveurs/cloudflare-docs.html): Direct access to official Cloudflare docs: Workers, Pages, R2, DNS, security.
+- [Computer Use](https://fjjjuv.github.io/Catalogue-mcp/serveurs/computer-use.html): Real desktop control: mouse, keyboard, screenshots — the agent operates the machine like a user.
+- [XERJ](https://fjjjuv.github.io/Catalogue-mcp/serveurs/xerj.html): Rust search engine (ES-compatible) with the MCP server inside the binary: autoindex turns any folder into queryable indices, plus durable agent memory.
+
+## Site
+
+- [Home](https://fjjjuv.github.io/Catalogue-mcp/): what MCP is and why it matters
+- [Catalog](https://fjjjuv.github.io/Catalogue-mcp/serveurs.html): all 12 servers
+- [Comparison](https://fjjjuv.github.io/Catalogue-mcp/comparatif.html): ratings, difficulty, where to start
+- [Guide](https://fjjjuv.github.io/Catalogue-mcp/guide.html): remote vs stdio, per-platform config, pitfalls
+- Config repo: https://github.com/fjjjuv/Catalogue-mcp
