@@ -5,7 +5,7 @@
 <h1 align="center">Catalogue-mcp</h1>
 
 <p align="center">
-  <strong>13 MCP servers. 6 platforms. One plug-and-play config each.</strong><br>
+  <strong>14 MCP servers. 6 platforms. One plug-and-play config each.</strong><br>
   Give your AI agent real superpowers — boards, repos, browsers, memory, security scans.
 </p>
 
@@ -53,6 +53,7 @@ VS Code or Codex — no docs digging, no format guessing.
 | [`memory/`](memory/) | Memory | Knowledge graph across sessions | local stdio | none | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/memory.html) |
 | [`semgrep/`](semgrep/) | Semgrep | Security scans while coding | local stdio | none | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/semgrep.html) |
 | [`xerj/`](xerj/) | XERJ | Search engine + agent memory (autoindex) | local stdio | none | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/xerj.html) |
+| [`zap/`](zap/) | OWASP ZAP | Drive security scans via AI | local HTTP | security key | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/zap.html) |
 
 📊 Full comparison & ratings → **[fjjjuv.github.io/Catalogue-mcp](https://fjjjuv.github.io/Catalogue-mcp/)**
 
