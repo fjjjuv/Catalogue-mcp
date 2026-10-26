@@ -1,0 +1,9 @@
+{
+  "zap": {
+    "type": "http",
+    "url": "http://localhost:8282",
+    "headers": {
+      "Authorization": "VOTRE_CLE_SECURITE_ZAP"
+    }
+  }
+}
