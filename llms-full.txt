@@ -84,6 +84,18 @@ Static security analysis turned into an MCP: we hacked the `semgrep mcp` CLI com
 - Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/semgrep.html
 - Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/semgrep/
 
+## OWASP ZAP
+
+ZAP 2.17's official "MCP Integration" add-on: the AI drives the security scanner in natural language — spiders, active scans, alerts, reports.
+
+- Type: local HTTP (localhost:8282)
+- Endpoint/command: http://localhost:8282
+- Auth: security key (Authorization header)
+- Cost: Free
+- Score: 4.3/5
+- Page: https://fjjjuv.github.io/Catalogue-mcp/serveurs/zap.html
+- Config folder: https://github.com/fjjjuv/Catalogue-mcp/tree/main/zap/
+
 ## Memory
 
 Persistent knowledge graph: the agent remembers facts, preferences and relations across sessions.

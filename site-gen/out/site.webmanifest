@@ -1,0 +1,49 @@
+{
+  "id": "https://fjjjuv.github.io/Catalogue-mcp/",
+  "name": "Catalogue-mcp — MCP Servers Explained",
+  "short_name": "Catalogue-mcp",
+  "description": "Explained catalog of 13 Model Context Protocol servers: configs, examples, ratings.",
+  "start_url": "https://fjjjuv.github.io/Catalogue-mcp/",
+  "scope": "https://fjjjuv.github.io/Catalogue-mcp/",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone"
+  ],
+  "background_color": "#0c0c10",
+  "theme_color": "#0c0c10",
+  "icons": [
+    {
+      "src": "https://fjjjuv.github.io/Catalogue-mcp/logo.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "https://fjjjuv.github.io/Catalogue-mcp/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://fjjjuv.github.io/Catalogue-mcp/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "https://fjjjuv.github.io/Catalogue-mcp/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Catalogue-mcp — catalog of 14 MCP servers"
+    },
+    {
+      "src": "https://fjjjuv.github.io/Catalogue-mcp/screenshot-mobile.png",
+      "sizes": "540x960",
+      "type": "image/png",
+      "label": "Catalogue-mcp on mobile"
+    }
+  ]
+}
