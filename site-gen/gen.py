@@ -6,7 +6,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "out")
 os.makedirs(OUT, exist_ok=True)
 
-BASE = "https://fjjjuv.github.io/catalogue-mcp"
+BASE = "https://fjjjuv.github.io/Catalogue-mcp"
 REPO = "https://github.com/fjjjuv/mcp-configs"
 
 # ---- Données des 12 serveurs --------------------------------------------
