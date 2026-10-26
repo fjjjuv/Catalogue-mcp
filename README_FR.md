@@ -5,7 +5,7 @@
 <h1 align="center">Catalogue-mcp</h1>
 
 <p align="center">
-  <strong>13 serveurs MCP. 6 plateformes. Une config plug-and-play pour chacun.</strong><br>
+  <strong>14 serveurs MCP. 6 plateformes. Une config plug-and-play pour chacun.</strong><br>
   Donnez à votre agent IA de vrais super-pouvoirs — boards, repos, navigateur, mémoire, scans de sécurité.
 </p>
 
@@ -16,7 +16,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/serveurs_MCP-13-6366f1" alt="13 serveurs">
+  <img src="https://img.shields.io/badge/serveurs_MCP-14-6366f1" alt="13 serveurs">
   <img src="https://img.shields.io/badge/plateformes-6-38bdf8" alt="6 plateformes">
   <img src="https://img.shields.io/badge/co%C3%BBt-100%25_gratuit-34d399" alt="gratuit">
   <img src="https://img.shields.io/badge/licence-MIT-f59e0b" alt="MIT">
@@ -54,6 +54,7 @@ format.
 | [`memory/`](memory/) | Memory | Graphe de connaissances persistant | local stdio | aucune | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/memory.html) |
 | [`semgrep/`](semgrep/) | Semgrep | Scans de sécurité pendant le code | local stdio | aucune | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/semgrep.html) |
 | [`xerj/`](xerj/) | XERJ | Moteur de recherche + mémoire d’agent (autoindex) | local stdio | aucune | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/xerj.html) |
+| [`zap/`](zap/) | OWASP ZAP | Pilotez des scans de sécurité par IA | HTTP local | clé de sécurité | [→](https://fjjjuv.github.io/Catalogue-mcp/serveurs/zap.html) |
 
 📊 Comparatif complet & notes → **[fjjjuv.github.io/Catalogue-mcp](https://fjjjuv.github.io/Catalogue-mcp/)**
 
