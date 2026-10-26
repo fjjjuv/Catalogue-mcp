@@ -119,6 +119,15 @@ S = [
                 ("Vérifie ce fichier que tu viens de modifier", "sécurité en continu"),
                 ("Écris une règle pour interdire eval()", "règle custom générée")],
       pourquoi="La sécurité devient continue : l'agent détecte et corrige les failles pendant qu'il écrit le code, pas après."),
+ dict(slug="zap", name="OWASP ZAP", cat="Sécurité", official=True,
+      typ="local HTTP (localhost:8282)", auth="clé de sécurité (Authorization)", score=4.3, diff=3, cout="Gratuit",
+      url="http://localhost:8282",
+      resume="L'add-on officiel « MCP Integration » de ZAP 2.17+ : l'IA pilote le scanner de sécurité en langage naturel.",
+      fait=["Lancer spider et AJAX spider sur une cible", "Démarrer/suivre des scans actifs et passifs", "Lire les alertes et l'arbre des sites", "Générer des rapports de vulnérabilités"],
+      exemples=[("Scanne mon app sur https://mon-site.fr", "contexte + spider + scan actif pilotés en conversation"),
+                ("Résume les alertes critiques trouvées", "lecture des alertes ZAP"),
+                ("Génère un rapport du dernier scan", "export direct depuis l'agent")],
+      pourquoi="Le pentest devient conversationnel : l'agent enchaîne reconnaissance, scan et lecture des alertes sans ouvrir l'interface ZAP."),
 ]
 
 CATS = sorted({s["cat"] for s in S})

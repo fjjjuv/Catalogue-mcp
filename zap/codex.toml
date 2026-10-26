@@ -1,0 +1,5 @@
+[mcp_servers.zap]
+url = "http://localhost:8282"
+
+[mcp_servers.zap.http_headers]
+Authorization = "VOTRE_CLE_SECURITE_ZAP"
