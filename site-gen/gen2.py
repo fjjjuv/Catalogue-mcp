@@ -154,6 +154,21 @@ S = [
           ("Write a rule to forbid eval()","generated custom rule","Écris une règle pour interdire eval()","règle custom générée")],
       w_en="Security becomes continuous: the agent detects and fixes flaws while writing code, not after.",
       w_fr="La sécurité devient continue : l'agent détecte et corrige les failles pendant qu'il écrit le code, pas après."),
+ dict(slug="zap", name="OWASP ZAP", official=True, score=4.3, diff=3,
+      cat_en="Security", cat_fr="Sécurité",
+      typ_en="local HTTP (localhost:8282)", typ_fr="HTTP local (localhost:8282)",
+      auth_en="security key (Authorization header)", auth_fr="clé de sécurité (en-tête Authorization)",
+      cout_en="Free", cout_fr="Gratuit",
+      url="http://localhost:8282",
+      r_en="ZAP 2.17's official \"MCP Integration\" add-on: the AI drives the security scanner in natural language — spiders, active scans, alerts, reports.",
+      r_fr="L'add-on officiel « MCP Integration » de ZAP 2.17+ : l'IA pilote le scanner de sécurité en langage naturel — spiders, scans actifs, alertes, rapports.",
+      f_en=["Start traditional and AJAX spiders on a target","Launch and monitor active/passive scans","Read alerts and the site tree","Generate vulnerability reports"],
+      f_fr=["Lancer des spiders classiques et AJAX sur une cible","Démarrer et suivre des scans actifs/passifs","Lire les alertes et l'arbre des sites","Générer des rapports de vulnérabilités"],
+      ex=[("Scan my app at https://mysite.com","context + spider + active scan driven in conversation","Scanne mon app sur https://mon-site.fr","contexte + spider + scan actif pilotés en conversation"),
+          ("Summarize the critical alerts found","reads ZAP alerts","Résume les alertes critiques trouvées","lecture des alertes ZAP"),
+          ("Generate a report of the last scan","direct export from the agent","Génère un rapport du dernier scan","export direct depuis l'agent")],
+      w_en="Pentesting becomes conversational: the agent chains recon, scanning and alert review without opening the ZAP GUI.",
+      w_fr="Le pentest devient conversationnel : l'agent enchaîne reconnaissance, scan et lecture des alertes sans ouvrir l'interface ZAP."),
  dict(slug="memory", name="Memory", official=True, score=4.4, diff=1,
       cat_en="Persistence", cat_fr="Persistance",
       typ_en="local stdio (npx)", typ_fr="local stdio (npx)",
@@ -495,7 +510,7 @@ for s in sorted(S,key=lambda x:(x["cat_en"],x["name"])):
 cats={}
 for s in S: cats.setdefault(s["cat_en"],[]).append(s)
 catlist="".join(f"<li><b>{c}</b> : "+", ".join(f'<a href="{BASE}/serveurs/{s["slug"]}.html">{s["name"]}</a>' for s in v)+"</li>" for c,v in sorted(cats.items()))
-srv=head("srv","All MCP servers — full catalog | Catalogue-mcp","Full catalog of 13 MCP servers: Trello, GitHub, Playwright, Semgrep, Context7, DeepWiki, Memory… role, auth, score, config.",BASE+"/serveurs.html",title_fr="Tous les serveurs MCP — catalogue complet | Catalogue-mcp",desc_fr="Catalogue complet de 13 serveurs MCP : Trello, GitHub, Playwright, Semgrep, Context7, DeepWiki, Memory… rôle, auth, note, config.")
+srv=head("srv","All MCP servers — full catalog | Catalogue-mcp","Full catalog of 14 MCP servers: Trello, GitHub, Playwright, Semgrep, Context7, DeepWiki, Memory… role, auth, score, config.",BASE+"/serveurs.html",title_fr="Tous les serveurs MCP — catalogue complet | Catalogue-mcp",desc_fr="Catalogue complet de 14 serveurs MCP : Trello, GitHub, Playwright, Semgrep, Context7, DeepWiki, Memory… rôle, auth, note, config.")
 srv+=f"""<div class="container page-section"><h1 data-i18n="srv_h1"></h1>
 <p class="section-desc" data-i18n="srv_intro"></p>
 <div class="table-wrap"><table><tr><th data-i18n="server">Server</th><th data-i18n="cat">Category</th>
@@ -515,7 +530,7 @@ crows="".join(f"""<tr><td><a href="{BASE}/serveurs/{s['slug']}.html">{s['name']}
 <td><span style="color:#ffd700">{stars(s['score'])}</span> {s['score']}/5</td>
 <td>{difftag(s)}</td><td data-i18n="s_{s['slug'].replace('-','_')}_cout">{s['cout_en']}</td>
 <td data-i18n="s_{s['slug'].replace('-','_')}_auth">{s['auth_en']}</td></tr>""" for s in sorted(S,key=lambda x:-x['score']))
-cmp=head("cmp","MCP servers comparison — ratings, difficulty, cost | Catalogue-mcp","Rated comparison of 13 MCP servers: usefulness, install difficulty, cost, authentication. Which server to install first?",BASE+"/comparatif.html",title_fr="Comparatif des serveurs MCP — notes, difficulté, coût | Catalogue-mcp",desc_fr="Comparatif noté de 13 serveurs MCP : utilité, difficulté d'installation, coût, authentification. Quel serveur installer en premier ?")
+cmp=head("cmp","MCP servers comparison — ratings, difficulty, cost | Catalogue-mcp","Rated comparison of 14 MCP servers: usefulness, install difficulty, cost, authentication. Which server to install first?",BASE+"/comparatif.html",title_fr="Comparatif des serveurs MCP — notes, difficulté, coût | Catalogue-mcp",desc_fr="Comparatif noté de 14 serveurs MCP : utilité, difficulté d'installation, coût, authentification. Quel serveur installer en premier ?")
 cmp+=f"""<div class="container page-section"><h1 data-i18n="cmp_h1"></h1>
 <p class="section-desc" data-i18n="cmp_intro" data-i18n-html="1"></p>
 <div class="table-wrap"><table><tr><th data-i18n="server">Server</th><th data-i18n="score">Score</th>
@@ -739,7 +754,7 @@ def make_og(path):
     f_big=ImageFont.load_default(64) if ImageFont else None
     f_sm=ImageFont.load_default(32) if ImageFont else None
     d.text((60,H//2-90),"Catalogue-mcp",fill=(240,240,245),font=f_big)
-    d.text((60,H//2+10),"13 MCP servers explained — configs, examples, ratings",
+    d.text((60,H//2+10),"14 MCP servers explained — configs, examples, ratings",
            fill=(160,160,175),font=f_sm)
     d.text((60,H//2+60),"fjjjuv.github.io/Catalogue-mcp",fill=(88,166,255),font=f_sm)
     img.save(path,"PNG")
@@ -782,7 +797,7 @@ def make_screenshot(path, w, h):
     d.text((56,18),"Catalogue-mcp",fill=(240,240,245),font=f_h)
     d.text((60,h//2-70),"Model Context Protocol, in practice",
            fill=(240,240,245),font=f_t)
-    d.text((60,h//2+10),"13 MCP servers explained: what they do, "
+    d.text((60,h//2+10),"14 MCP servers explained: what they do, "
            "example requests, ratings, ready configs.",
            fill=(160,160,175),font=f_s)
     cols=min(4,w//320)
@@ -816,7 +831,7 @@ manifest={
  ],
  "screenshots":[
   {"src":BASE+"/screenshot-wide.png","sizes":"1280x720","type":"image/png",
-   "form_factor":"wide","label":"Catalogue-mcp — catalog of 13 MCP servers"},
+   "form_factor":"wide","label":"Catalogue-mcp — catalog of 14 MCP servers"},
   {"src":BASE+"/screenshot-mobile.png","sizes":"540x960","type":"image/png",
    "label":"Catalogue-mcp on mobile"},
  ],
